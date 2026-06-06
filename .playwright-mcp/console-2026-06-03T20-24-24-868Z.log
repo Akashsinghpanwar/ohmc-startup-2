@@ -1,0 +1,75 @@
+[     218ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 1366371ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 3361595ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 3364356ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[ 3364574ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[ 4123371ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:40:24
+[ 4182130ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:8000/api/eligibility/scan:0
+[ 4188361ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/10007/16187:0
+[ 4188369ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/10006/16186:0
+[ 4188369ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/10006/16188:0
+[ 4191880ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40033/64759:0
+[ 4191892ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40033/64756:0
+[ 4191894ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40034/64759:0
+[ 4191894ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40031/64758:0
+[ 4191894ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40032/64757:0
+[ 4192166ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80066/129517:0
+[ 4192170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80064/129516:0
+[ 4192550ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/160132/259031:0
+[ 4192878ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/160131/259030:0
+[ 4207591ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80067/129514:0
+[ 4209691ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80067/129514:0
+[ 4209934ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80066/129517:0
+[ 4209935ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/80065/129517:0
+[ 4210442ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40032/64758:0
+[ 4210445ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40032/64756:0
+[ 4210452ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40034/64757:0
+[ 4210696ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40034/64755:0
+[ 4210708ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/40034/64759:0
+[ 4211478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/16/20017/32376:0
+[ 4212895ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/13/2501/4047:0
+[ 4212895ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/13/2502/4045:0
+[ 4212897ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/13/2502/4046:0
+[ 4397366ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 4754270ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 4757639ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 5400217ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 5428896ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/:0
+[ 5437633ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:40:24
+[ 5473585ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/12/1249/1995:0
+[ 5473668ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/12/1249/1996:0
+[ 5473989ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/14/5004/7984:0
+[ 5474039ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/14/5001/7987:0
+[ 5474145ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/14/5004/7983:0
+[ 5474728ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/14/5003/7985:0
+[ 5474944ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/14/5004/7985:0
+[ 5476269ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/10007/15970:0
+[ 5476338ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/10004/15969:0
+[ 5476554ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/16/20011/31945:0
+[ 5723529ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 5728665ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 5730248ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:40:24
+[ 5732383ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 5979901ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 5983340ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:40:24
+[225640204ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.google.com/async/folsrch?vet=12ahUKEwiN6pXbieyUAxU2dUEAHeMaGqQQ54gQegQIJhAE..i&ei=2aQgas2ZFbbqhbIP47XooAo&opi=89978449&source=chrome.ob&sourceid=chrome&yv=3&q=geovation+scotland&mlro=0a44V61-eQX4v6p_wdNxn1a8VCT00Oyf76t2l_9_BmqHKx_Bvln5KtLN8C-fplK8YqRW5rULhPXxhviaSw-Qsy9XYJ77eVNwjQwYV4MEh9XqXaxY0auvyUVFGJ2EPbHqZHSKVao&mlros=JBYsl26qhrc&mrc=CAI4kANQAGgAcACYAQCgAQCoAQA&snr=1&cs=0&async=_basejs:%2Fxjs%2F_%2Fjs%2Fk%3Dxjs.s.en_GB.KK1hXGKMsZ4.2019.O%2Fam%3DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIACAAAACQAQAAAIAAAAAAAAAAAAAAAAACAARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABABBAAgAAAAAAAAAIAAAAAEAAAAAAAAAAAAAYAEAAABBAEAAAAIACAAAAAAAAAAAAAAAAAAAAAAgCAAAAACSQAAAA_jbfQA0AAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAYAAAAAAAAALAAAABAMAAAQAAQEAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAIAAgAAAACAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAgAAAoAAAAAAA4AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAICABgAAAAAAAACAAgCAAD8AEAABAAAAAAAOAAAAAAABAQAAAAAAIIBAAIABAAAAADkAHg_AIYICAAAAAAAAAAAAAAAAAAAAAAAAACAACmAcSH5AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUoRNAQAAAAAAbA0ACA%2Fdg%3D0%2Fbr%3D1%2Fichc%3D1%2Frs%3DACT90oFovCSi9scHsHAXUzfNtoeYZvWyRg%2Fcb%3Dloaded_h_0%3Fcb%3D121509378,_basecss:%2Fxjs%2F_%2Fss%2Fk%3Dxjs.s.OdVgzm8_aq0.L.B1.O%2Fam%3DAAAQAAAACAIAAAAAAAAAAAAgAAARAAAAAAAAAAAAAAAAAAAAAAFAAAAAAgAAAAAAAAAAAAIAAAAAIAAAAAAACCEAAAQAAAAAAAAAAAUAAAAACBIQAYAJAAAAAAAAACjUBwAAwAAAAAAAAB4ADBAiAAAAAAAAAAAAAAAAAgBAAgAAAAAEAAAIAAAAAAAAAAAABAAAAAAAAMAAABBAAgAAACBAAQAABAAABAAAAAAAAAAAAAAiBAAAAACAAAAAAAAAQA4AAAAAAAAAAAAAAAQAAAAAAAAACAAAAGAAkAYYAAAAAABAGAEACAAAAAAAQAAAEAAAAAAAAAAAICABEAAAAQMAAAAAYAAAAAAAAAAAAgIIQiEAAAKAAhAQAAAAADgAAAAAAAAAAAQEAAAAAAAAAAACABAQgBBAAAAAAAAoAAAAAAEAAAA5AAAAAAAAACCAAEAAAgBGkAEASBQAQAQAIAAABAAARAAAAACAAiAABAAAAAAAAAAAAABGAAAAAAAAAAAAACQALIFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA%2Fbr%3D1%2Fcb%3Dloaded_h_0%2Frs%3DACT90oGT3X-zr4ECyFNnozZ6KkZh-pwOsw%3Fcb%3D121509378,_basecomb:%2Fxjs%2F_%2Fjs%2Fk%3Dxjs.s.en_GB.KK1hXGKMsZ4.2019.O%2Fck%3Dxjs.s.OdVgzm8_aq0.L.B1.O%2Fam%3DAAAQAAAACAIAAAAAAAAAAAAgAAARAAAAAAAAAAAAAAAAAAAAAAFAAAAAAgAAAAAAAAAAAAIAAAAAIAAAAAAACCEAAAQAAIIACAAAACUAQAAAKBIQAYAJAAAAAAAAACjUBxAAwAAAAAAAAB4ADBAiAAAAAAAAAAAAIAABAhBAAgAAAAAEAAAIAAAAAEAAAAAABAAAAAAYAMAAABBAEgAAAKBCAQAABAAABAAAAAAAAAAAAAgiBAAAACSQAAAA_jbfQA8AAAAAGAAAAAAAAAQAAAAAAAAACAAAAGAgkQYYAAAAAABAGLEACABAMAAAQAAQEAABAAAAAAAAICABEAAAAQMABAAAYAAAAAAAAAAAAgIIQiEAAAKAAhAQAAAQADgAAAAAAAAAAAQEAAAAAAACAAACABAQgBBAAAAAAAAoAAAoAAEAAAA5AAAAAAAAACCQAEAAAgBGkAEASBQAQAQAIICABgAARAAAAACAAiCABD8AEAABAAAAAABOAAAAAAABAQAAACQALIFAAIABAAAAADkAHg_AIYICAAAAAAAAAAAAAAAAAAAAAAAAACAACmAcSH5BAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUoRNAQAAAAAAbA0ACA%2Fd%3D1%2Fed%3D1%2Fdg%3D0%2Fbr%3D1%2Fujg%3D1%2Fichc%3D1%2Frs%3DACT90oEqkQKWr-ipZQJlY54UlgwyrtQ4ig%2Fcb%3Dloaded_h_0%3Fcb%3D121509378,_fmt:madl,_mado:ed,_id:B2Jtyd:0

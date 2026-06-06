@@ -1,0 +1,383 @@
+[    1337ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://blinkandbling-2.onrender.com/:0
+[    1584ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[    1929ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[    2177ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://blinkandbling-2.onrender.com/:0
+[   10065ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://blinkandbling-2.onrender.com/:0
+[   10160ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://blinkandbling-2.onrender.com/:0
+[   10192ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[   10263ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[   16222ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://blinkandbling-2.onrender.com/jeweller/signup:0
+[   16645ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[   16645ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[   21025ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[   21072ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  421650ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://blinkandbling-2.onrender.com/jeweller/signup:0
+[  422073ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  422073ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  425416ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://blinkandbling-2.onrender.com/jeweller/login:0
+[  455998ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://blinkandbling-2.onrender.com/workspace/customers:0
+[  558834ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  559354ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6b7a-a112-72ee-8cef-dabc952fc11a:0
+[  559364ms] Error: Could not load /api/cad/image-to-3d/result/019e6b7a-a112-72ee-8cef-dabc952fc11a: fetch for "https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6b7a-a112-72ee-8cef-dabc952fc11a" responded with 404: 
+    at https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:9:97505
+    at Object.u [as onError] (https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:1279:6126)
+    at https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:5:34636
+[  559365ms] Error: Could not load /api/cad/image-to-3d/result/019e6b7a-a112-72ee-8cef-dabc952fc11a: fetch for "https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6b7a-a112-72ee-8cef-dabc952fc11a" responded with 404: 
+    at https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:9:97505
+    at Object.u [as onError] (https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:1279:6126)
+    at https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:5:34636
+[  559881ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  563451ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://blinkandbling-2.onrender.com/portal/3d-studio:0
+[  579033ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  579463ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  580054ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6e0e-5f1f-78d8-a420-2aea9d3ccd2e:0
+[  580057ms] Error: Could not load /api/cad/image-to-3d/result/019e6e0e-5f1f-78d8-a420-2aea9d3ccd2e: fetch for "https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6e0e-5f1f-78d8-a420-2aea9d3ccd2e" responded with 404: 
+    at https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:9:97505
+    at Object.u [as onError] (https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:1279:6126)
+    at https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:5:34636
+[  580065ms] Error: Could not load /api/cad/image-to-3d/result/019e6e0e-5f1f-78d8-a420-2aea9d3ccd2e: fetch for "https://blinkandbling-2.onrender.com/api/cad/image-to-3d/result/019e6e0e-5f1f-78d8-a420-2aea9d3ccd2e" responded with 404: 
+    at https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:9:97505
+    at Object.u [as onError] (https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:1279:6126)
+    at https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:5:34636
+[  580573ms] [LOG] THREE.WebGLRenderer: Context Lost. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  590274ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://blinkandbling-2.onrender.com/portal/gallery:0
+[  606287ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://blinkandbling-2.onrender.com/api/uploads:0
+[  606287ms] [ERROR] Failed to load resource: the server responded with a status of 502 () @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[  606372ms] Unterminated string in JSON at position 24288391 (line 1 column 24288392)
+[  610829ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[  615848ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[  620854ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[  625862ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[  664439ms] [WARNING] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently @ https://blinkandbling-2.onrender.com/assets/index-2EMaIHXk.js:1054
+[  966720ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  967201ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  967643ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  971102ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  975338ms] [WARNING] THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision
+(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision
+
+
+  @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  976038ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  981077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  986053ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  986255ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  986360ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  991070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[  996045ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1001054ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1006080ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1011110ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1016086ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1021044ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1026085ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1031076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1036102ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1041086ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1046053ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1051036ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1056059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1061059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1066060ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1071101ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1076084ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1081076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1086104ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1091073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1096051ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1101052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1106055ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1111074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1116074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1121059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1126049ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1131075ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1136041ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1141091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1146041ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1151058ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1156051ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1161068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1166087ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1171074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1176067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1181076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1186074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1191091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1196067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1201065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1206077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1211052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1216059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1221091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1226090ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1231057ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1236040ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1241066ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1246065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1251072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1256065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1261052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1266036ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1271037ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1276068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1281067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1286057ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1291052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1296067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1301068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1306060ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1311122ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1316076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1321073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1326090ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1331066ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1336059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1341089ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1347886ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[ 1350670ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[ 1355672ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[ 1361561ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[ 1373686ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1374046ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1376078ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1381043ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1386115ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1391068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1396390ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1401076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1406070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1411054ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1416062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1421082ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1426065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1431216ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1436058ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1441099ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1446056ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1451089ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1456071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1461067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1466085ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1471076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1476087ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1481078ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1486073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1491044ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1496055ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1501117ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1506091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1511056ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1516043ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1521047ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1526104ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1531068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1536074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1541062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1546164ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1551071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1556075ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1561044ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1566048ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1571085ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1576071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1581115ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1586134ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1591076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1596063ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1606065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1611069ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1616067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1621043ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1626059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1631072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1637151ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1641056ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1646086ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1651077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1656096ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1661080ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1666099ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1671050ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1676077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1681048ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1686061ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1691122ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1696091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1701104ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1706094ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1711087ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1716082ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1721089ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1726071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1731081ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1736070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1741053ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1746058ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1751070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1756051ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1761081ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1766081ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1771092ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1776072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1781044ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1786096ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1791104ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1796089ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1801076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1806064ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1811088ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1816102ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1821084ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1826064ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1831070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1836078ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1841063ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1846102ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1851087ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1856057ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1861052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1866120ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1871103ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1876090ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1881098ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1886050ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1891057ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1896043ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1901060ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1906053ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1911065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1916056ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1921042ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1926128ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1931066ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1936132ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1941086ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1946097ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1951065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1956373ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1961059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1966048ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1971045ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1976099ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1981061ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1986072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1991083ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 1996074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2001068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2006062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2011047ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2016084ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2021071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2026041ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2031079ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2036083ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2041146ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2046073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2051095ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2056057ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2061080ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2066094ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2071086ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2076083ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2081077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2086052ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2091047ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2096062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2101084ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2106077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2111085ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2116059ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2121076ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2126159ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2131097ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2136089ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2141079ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2146043ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2151075ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2156118ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2161091ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2166051ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2171067ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2176065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2181098ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2186077ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2191049ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2196072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2201073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2206081ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2211085ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2216073ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2221084ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2226047ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2231080ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2236063ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2241090ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2246092ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2251140ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2256062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2261075ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2266066ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2271094ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2276066ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2281060ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2286095ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2291083ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2296062ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2301109ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2306051ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2311070ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2316065ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2321050ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2326071ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2331074ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2336068ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2341072ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2346069ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2351922ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2360396ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2362902ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[ 2433104ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77761049ms] [ERROR] Failed to load resource: net::ERR_ADDRESS_UNREACHABLE @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77764252ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77765910ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77770942ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77775684ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://blinkandbling-2.onrender.com/api/messages/unread-counts:0
+[77836020ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836369ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836535ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836577ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836735ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836827ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77836852ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77837176ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77837649ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77838327ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77841120ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77846122ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77851108ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77856408ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77861124ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77866126ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77871540ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77876237ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77881166ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77886140ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77891124ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77896364ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77901122ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77906473ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77911124ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77916106ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77921695ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77926120ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77931115ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77936123ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77939910ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77944927ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77948702ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77948936ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0
+[77949935ms] [WARNING] THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead. @ https://blinkandbling-2.onrender.com/assets/vendor-three-AFkTk3Xz.js:0

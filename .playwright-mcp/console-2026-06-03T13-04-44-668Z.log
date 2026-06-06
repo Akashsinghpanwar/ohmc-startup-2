@@ -1,0 +1,359 @@
+[     475ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[     705ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0
+[  399149ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 1305273ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 1305473ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5174/favicon.ico:0
+[ 1329654ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://127.0.0.1:5174/:0
+[ 1332467ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 1334753ms] [ERROR] WebSocket connection to 'ws://localhost:5173/?token=OM7jG48gPt41' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:5173/@vite/client:744
+[ 1336809ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:5173/?token=OM7jG48gPt41' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:5173/@vite/client:754
+[ 1336810ms] [ERROR] [vite] failed to connect to websocket.
+your current setup:
+  (browser) localhost:5173/ <--[HTTP]--> 127.0.0.1:5173/ (server)
+  (browser) localhost:5173/ <--[WebSocket (failing)]--> 127.0.0.1:5173/ (server)
+Check out your Vite / network configuration and https://vite.dev/config/server-options.html#server-hmr . @ http://localhost:5173/@vite/client:764
+[ 1650403ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 1650573ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5174/favicon.ico:0
+[ 1967427ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5174/:0
+[ 2059920ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5174/:0
+[ 2108583ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2443752ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2490340ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2502225ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2590219ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 2590960ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2593110ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 2593743ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 2631879ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 3214120ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[ 3476809ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 3487881ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/:0
+[ 3515157ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[ 3525656ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[ 3525657ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[ 3529506ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=verra:0
+[ 3933246ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 3946010ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 3950155ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[ 4042795ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 4043394ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[ 4048382ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[ 4048405ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[ 5265360ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=local:0
+[ 5432462ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=local:0
+[ 5615284ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 7244019ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[ 7247020ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[ 7247022ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://127.0.0.1:8000/api/auth/me:0
+[ 7247022ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://127.0.0.1:8000/api/health:0
+[ 7247022ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://127.0.0.1:8000/api/auth/me:0
+[ 7247022ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://127.0.0.1:8000/api/health:0
+[ 7247063ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ http://localhost:5173/src/assets/logo.png:0
+[10627768ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[10627823ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[10627858ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[10628852ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[17817277ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[17817359ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[17817419ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://127.0.0.1:8000/api/health:0
+[20256719ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/:0
+[20268181ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[20514490ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[20514509ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=all:0
+[20517644ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=verra:0
+[20519008ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=goldstandard:0
+[20559423ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8000/api/marketplace/?source=local:0
+[20562693ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[21172623ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[21177740ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx:39:24
+[21755286ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[21879690ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[21882260ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[21938324ms] ReferenceError: ChevronDown is not defined
+    at http://localhost:5173/src/App.jsx?t=1780513639696:1535:34
+    at Array.map (<anonymous>)
+    at EligibilityScreen (http://localhost:5173/src/App.jsx?t=1780513639696:1520:158)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+[21938325ms] [WARNING] %s
+
+%s
+ An error occurred in the <EligibilityScreen> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[21966994ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[21967551ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[21990652ms] ReferenceError: ChevronDown is not defined
+    at http://localhost:5173/src/App.jsx?t=1780513639696:1535:34
+    at Array.map (<anonymous>)
+    at EligibilityScreen (http://localhost:5173/src/App.jsx?t=1780513639696:1520:158)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+[21990652ms] [WARNING] %s
+
+%s
+ An error occurred in the <EligibilityScreen> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22105440ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[22222587ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[22223253ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[22249580ms] ReferenceError: ChevronDown is not defined
+    at http://localhost:5173/src/App.jsx?t=1780514027008:1540:34
+    at Array.map (<anonymous>)
+    at EligibilityScreen (http://localhost:5173/src/App.jsx?t=1780514027008:1525:158)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+[22249580ms] [WARNING] %s
+
+%s
+ An error occurred in the <EligibilityScreen> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22291142ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[22291722ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[22301742ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx:39:24
+[22336616ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx?t=1780513601025:40:24
+[22451575ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[22452211ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5174/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5174/src/components/BoundaryMap.jsx?t=1780513601025:40:24
+[22465789ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://127.0.0.1:8000/api/eligibility/scan:0
+[22501969ms] ReferenceError: ChevronDown is not defined
+    at http://localhost:5174/src/App.jsx?t=1780514277031:1538:34
+    at Array.map (<anonymous>)
+    at EligibilityScreen (http://localhost:5174/src/App.jsx?t=1780514277031:1523:164)
+    at Object.react_stack_bottom_frame (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+[22501970ms] [WARNING] %s
+
+%s
+ An error occurred in the <EligibilityScreen> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5174/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22518450ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[22519238ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[22649792ms] ReferenceError: NAV_BY_ROLE is not defined
+    at AppShell (http://localhost:5173/src/App.jsx?t=1780514534228:152:15)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12408:13)
+    at performWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:11827:37)
+[22649793ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppShell> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22660241ms] ReferenceError: NAV_BY_ROLE is not defined
+    at AppShell (http://localhost:5173/src/App.jsx?t=1780514544331:148:15)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12408:13)
+    at performWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:11827:37)
+[22660239ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppShell> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22671513ms] ReferenceError: nav is not defined
+    at AppShell (http://localhost:5173/src/App.jsx?t=1780514555331:202:77)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:12408:13)
+    at performWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:11827:37)
+[22671513ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppShell> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:6965
+[22684147ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[22798554ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/:0
+[22813092ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/:0
+[22816408ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) @ http://localhost:5173/:0
+[22819240ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[22906014ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/#buyers:0
+[23345294ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5173/@vite/client:864
+[24002306ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=00b8a41a:20102
+[24133260ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:5173/:0
+[24143942ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[24516491ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24
+[25086909ms] Error: Map container is already initialized.
+    at NewClass._initContainer (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2741:19)
+    at NewClass.initialize (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:2031:16)
+    at new NewClass (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:185:29)
+    at Object.createMap [as map] (http://localhost:5173/node_modules/.vite/deps/leaflet.js?v=00b8a41a:3162:16)
+    at http://localhost:5173/src/components/BoundaryMap.jsx?t=1780513601044:40:24

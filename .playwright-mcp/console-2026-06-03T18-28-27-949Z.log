@@ -1,0 +1,5 @@
+[   18664ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://jobs.aston.ac.uk/Registration/Verify.aspx?jobId=8958:0
+[   32432ms] [WARNING] Blocked aria-hidden on an element because its descendant retained focus. The focus must not be hidden from assistive technology users. Avoid using aria-hidden on a focused element or its ancestor. Consider using the inert attribute instead, which will also prevent focus. For more details, see the aria-hidden section of the WAI-ARIA specification at https://w3c.github.io/aria/#aria-hidden.
+Element with focus: <td.rc-imageselect-tile#2>
+Ancestor with aria-hidden: <div.rc-imageselect-target#rc-imageselect-target> @ https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=ne1iDVwClkE7nKD3uA9Vqsvl&k=6Lc_ZPQqAAAAAGr0l0A1O5OCeZDkXxq7MOh6Lc2D&bft=0dAFcWeA5L8MlYP7DUUFdtQCBcmjkNIdIUrITx4QCWvFCSOJqJve3v1OGRhbnSjMh1_rKWfnpH4-60ZlzBssA7h9pRV5TB1OUA4A:0
+[  584997ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.gov.uk/global-talent%C2%A0:0

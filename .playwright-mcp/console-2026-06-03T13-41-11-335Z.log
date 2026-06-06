@@ -1,0 +1,12 @@
+[   16127ms] [INFO] Autofocus processing was blocked because a document already has a focused element. @ https://www.google.com/search?q=govtindia&oq=govtindia&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTILCAEQABgKGAsYgAQyBwgCEAAYgAQyCwgDEAAYChgLGIAEMgsIBBAAGAoYCxiABDILCAUQABgKGAsYgAQyCwgGEAAYChgLGIAEMgsIBxAAGAoYCxiABDILCAgQABgKGAsYgAQyCwgJEAAYChgLGIAE0gEIODc2NmowajeoAgewAgHxBdpDvzLuLsRq8QXaQ78y7i7Eag&sourceid=chrome&ie=UTF-8&source=chrome.ob&sei=AS8gapqsL5yehbIPiuuC0AY:0
+[   17219ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://code.jquery.com/jquery-3.5.1.js' with computed SHA-256 integrity 'QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc='. The resource has been blocked. @ https://www.india.gov.in/:0
+[   17982ms] TypeError: window.unloadSwalekh is not a function
+    at https://www.india.gov.in/_next/static/chunks/app/layout-84b97d176c9938fa.js:1:16811
+[   18028ms] TypeError: window.unloadSwalekh is not a function
+    at https://www.india.gov.in/_next/static/chunks/app/layout-84b97d176c9938fa.js:1:16811
+[   19371ms] [LOG] {hostname: www.india.gov.in, wscope: COMPLETE, inclusionList: Array(0), exclusionList: Array(0), languageSelectorVisible: false} @ https://www.india.gov.in/api/translation/snippet/bundle/file?projectId=edc96308-11d6-49a8-855f-fbcd407e094f:1
+[   19372ms] [LOG] no of times it is loaded @ https://www.india.gov.in/api/translation/snippet/bundle/file?projectId=edc96308-11d6-49a8-855f-fbcd407e094f:1
+[  325286ms] TypeError: window.unloadSwalekh is not a function
+    at https://www.india.gov.in/_next/static/chunks/app/layout-84b97d176c9938fa.js:1:16811
+[  325286ms] TypeError: window.unloadSwalekh is not a function
+    at https://www.india.gov.in/_next/static/chunks/app/layout-84b97d176c9938fa.js:1:16811

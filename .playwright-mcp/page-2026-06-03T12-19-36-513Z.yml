@@ -1,0 +1,364 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - button "ohmc" [ref=e6] [cursor=pointer]
+      - generic [ref=e7]:
+        - link "How It Works" [ref=e8] [cursor=pointer]:
+          - /url: "#how"
+        - link "For Landowners" [ref=e9] [cursor=pointer]:
+          - /url: "#landowners"
+        - link "For Buyers" [ref=e10] [cursor=pointer]:
+          - /url: "#buyers"
+        - generic [ref=e11] [cursor=pointer]: Marketplace
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: "#about"
+        - button "Log in" [ref=e13] [cursor=pointer]
+        - button "Get started" [ref=e14] [cursor=pointer]:
+          - text: Get started
+          - img [ref=e15]
+  - generic [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]: Scotland-first · Standards-aligned · Trusted mediator
+      - heading "Connecting Land to Carbon Markets." [level=1] [ref=e23]:
+        - text: Connecting Land
+        - text: to Carbon Markets.
+      - paragraph [ref=e24]: OHMC is the trusted infrastructure platform that makes UK land-based carbon markets accessible to every landowner — with real satellite screening, standards-aligned assessment and integrity-first buyer matching.
+      - generic [ref=e25]:
+        - button "Scan My Land Free" [ref=e26] [cursor=pointer]:
+          - text: Scan My Land Free
+          - img [ref=e27]
+        - button "Browse Projects" [ref=e29] [cursor=pointer]
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - img [ref=e32]
+          - text: Woodland Carbon Code
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - text: Peatland Code
+        - generic [ref=e39]:
+          - img [ref=e40]
+          - text: IUCN UK
+        - generic [ref=e43]:
+          - img [ref=e44]
+          - text: UK Land Carbon Registry
+        - generic [ref=e47]:
+          - img [ref=e48]
+          - text: MRV Enabled
+    - link [ref=e51] [cursor=pointer]:
+      - /url: "#stats"
+      - img [ref=e52]
+  - generic [ref=e54]:
+    - generic [ref=e55]:
+      - strong [ref=e56]: 248+
+      - paragraph [ref=e57]: Projects Registered
+    - generic [ref=e58]:
+      - strong [ref=e59]: 2.4M
+      - paragraph [ref=e60]: tCO₂e Pipeline
+    - generic [ref=e61]:
+      - strong [ref=e62]: £26.85
+      - paragraph [ref=e63]: Avg WCC PIU Price /t
+    - generic [ref=e64]:
+      - strong [ref=e65]: 56+
+      - paragraph [ref=e66]: Verified Active Buyers
+  - generic [ref=e75]:
+    - generic [ref=e76]:
+      - img "Satellite view of Scottish land" [ref=e77]
+      - generic [ref=e78]:
+        - img [ref=e79]
+        - text: Real-time Sentinel-2 satellite analysis
+    - generic [ref=e81]:
+      - paragraph [ref=e82]: The problem
+      - heading "Carbon markets are locked. We open them." [level=2] [ref=e83]:
+        - text: Carbon markets are locked.
+        - text: We open them.
+      - paragraph [ref=e84]: Small landowners, farmers and crofters own the land that holds Scotland's carbon future — but fixed validation costs, technical complexity and a post-2021 credibility crisis have made markets inaccessible to all but the largest estates.
+      - paragraph [ref=e85]: OHMC is purpose-built first-mile infrastructure. We handle the screening, evidence and routing — you focus on the land.
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - img [ref=e89]
+          - generic [ref=e92]:
+            - strong [ref=e93]: Market access
+            - paragraph [ref=e94]: WCC validation alone costs thousands — above break-even for most small parcels.
+        - generic [ref=e95]:
+          - img [ref=e97]
+          - generic [ref=e102]:
+            - strong [ref=e103]: Information gap
+            - paragraph [ref=e104]: Landowners don't know if their land qualifies, which standard applies, or who to approach.
+        - generic [ref=e105]:
+          - img [ref=e107]
+          - generic [ref=e110]:
+            - strong [ref=e111]: Trust collapse
+            - paragraph [ref=e112]: 94% of rainforest credits delivered no real benefit. Buyers now demand verifiable evidence.
+  - generic [ref=e114]:
+    - generic [ref=e115]:
+      - paragraph [ref=e116]: How it works
+      - heading "Four steps from land to income." [level=2] [ref=e117]
+      - paragraph [ref=e118]: Each step is independently valuable. You don't have to commit to the full journey to get value from OHMC.
+    - generic [ref=e119]:
+      - generic [ref=e120]:
+        - generic [ref=e122]: "01"
+        - generic [ref=e123]:
+          - img [ref=e125]
+          - heading "Draw your boundary" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Use our interactive map to outline your parcel. We instantly pull real Sentinel-2 satellite data, soil carbon readings and land cover classification — no site visit required.
+      - generic [ref=e129]:
+        - generic [ref=e131]: "02"
+        - generic [ref=e132]:
+          - img [ref=e134]
+          - heading "Get your assessment" [level=3] [ref=e137]
+          - paragraph [ref=e138]: Our rules engine checks your land against WCC and Peatland Code criteria. You receive an eligibility score, pathway recommendation and indicative carbon value range.
+      - generic [ref=e139]:
+        - generic [ref=e141]: "03"
+        - generic [ref=e142]:
+          - img [ref=e144]
+          - heading "Build your evidence" [level=3] [ref=e147]
+          - paragraph [ref=e148]: We generate a structured evidence pack and route you to approved VVBs, ecologists and labs. Every step is tracked in your project dashboard.
+      - generic [ref=e149]:
+        - generic [ref=e151]: "04"
+        - generic [ref=e152]:
+          - img [ref=e154]
+          - heading "Connect with buyers" [level=3] [ref=e159]
+          - paragraph [ref=e160]: Once your project is verified, it appears in our curated marketplace — with clear trust labels so buyers can transact with full confidence.
+    - button "Start your free scan" [ref=e162] [cursor=pointer]:
+      - text: Start your free scan
+      - img [ref=e163]
+  - generic [ref=e166]:
+    - generic [ref=e167]:
+      - paragraph [ref=e168]: Who it's for
+      - heading "Built for both sides of the market." [level=2] [ref=e169]
+    - generic [ref=e170]:
+      - generic [ref=e173]:
+        - paragraph [ref=e174]: For Landowners & Farmers
+        - heading "Discover what your land is worth to the carbon market." [level=3] [ref=e175]
+        - paragraph [ref=e176]: Whether you own peatland in Sutherland or a woodland in Perthshire, OHMC tells you in minutes whether you qualify, which pathway fits, and what you could earn — without any upfront cost.
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - img [ref=e179]
+            - text: Free eligibility scan with real satellite data
+          - listitem [ref=e182]:
+            - img [ref=e183]
+            - text: WCC and Peatland Code assessment
+          - listitem [ref=e186]:
+            - img [ref=e187]
+            - text: Transparent carbon value estimate
+          - listitem [ref=e190]:
+            - img [ref=e191]
+            - text: Guided evidence pack and partner routing
+          - listitem [ref=e194]:
+            - img [ref=e195]
+            - text: Project tracker from submission to sale
+        - button "Check my land" [ref=e198] [cursor=pointer]:
+          - text: Check my land
+          - img [ref=e199]
+      - generic [ref=e203]:
+        - paragraph [ref=e204]: For Corporate Buyers & ESG Teams
+        - heading "Find high-integrity UK carbon supply you can stand behind." [level=3] [ref=e205]
+        - paragraph [ref=e206]: Post-2021, undifferentiated offset supply is a reputational liability. OHMC curates pre-screened domestic projects with clear trust labels, retirement evidence and claim guidance.
+        - list [ref=e207]:
+          - listitem [ref=e208]:
+            - img [ref=e209]
+            - text: Curated UK domestic project listings
+          - listitem [ref=e212]:
+            - img [ref=e213]
+            - text: "Trust labels: what you can and cannot claim"
+          - listitem [ref=e216]:
+            - img [ref=e217]
+            - text: Due diligence pack on request
+          - listitem [ref=e220]:
+            - img [ref=e221]
+            - text: Serialised retirement and reporting evidence
+          - listitem [ref=e224]:
+            - img [ref=e225]
+            - text: ESG portfolio dashboard
+        - button "Browse marketplace" [ref=e228] [cursor=pointer]:
+          - text: Browse marketplace
+          - img [ref=e229]
+  - generic [ref=e232]:
+    - generic [ref=e233]:
+      - paragraph [ref=e234]: Platform
+      - heading "Everything needed to develop, verify and trade with confidence." [level=2] [ref=e235]
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - img [ref=e239]
+        - heading "Real Satellite Screening" [level=4] [ref=e241]
+        - paragraph [ref=e242]: Sentinel-2 L2A imagery processed live over your boundary. NDVI, NDWI, soil moisture and bare-peat indices — not estimates from a database.
+      - generic [ref=e243]:
+        - img [ref=e245]
+        - heading "Standards-bound Rules Engine" [level=4] [ref=e248]
+        - paragraph [ref=e249]: WCC and Peatland Code eligibility rules applied deterministically. AI estimates — the engine quantifies. Independent VVBs validate.
+      - generic [ref=e250]:
+        - img [ref=e252]
+        - heading "MRV Automation" [level=4] [ref=e255]
+        - paragraph [ref=e256]: Guided monitoring, reporting and verification workflow. Satellite alerts and periodic field evidence compared against project claims.
+      - generic [ref=e257]:
+        - img [ref=e259]
+        - heading "Buyer Marketplace" [level=4] [ref=e264]
+        - paragraph [ref=e265]: Curated supply matched to demand. Trust labels tell buyers exactly what they can claim — protecting both sides from greenwashing risk.
+      - generic [ref=e266]:
+        - img [ref=e268]
+        - heading "Evidence Vault" [level=4] [ref=e271]
+        - paragraph [ref=e272]: Immutable, time-stamped audit trail for every project. Every document, every decision — structured for VVB review and registry submission.
+      - generic [ref=e273]:
+        - img [ref=e275]
+        - heading "Portfolio Analytics" [level=4] [ref=e278]
+        - paragraph [ref=e279]: Track carbon pipeline value, project stage, buyer interest and revenue forecasts — all in one place, in real time.
+  - generic [ref=e281]:
+    - generic [ref=e282]:
+      - paragraph [ref=e283]: Trusted by
+      - heading "What our users say." [level=2] [ref=e284]
+    - generic [ref=e285]:
+      - generic [ref=e286]:
+        - generic [ref=e287]:
+          - img [ref=e288]
+          - img [ref=e290]
+          - img [ref=e292]
+          - img [ref=e294]
+          - img [ref=e296]
+        - paragraph [ref=e298]: "\"We had no idea our upland moor could qualify. OHMC gave us an assessment in minutes — the satellite data was genuinely impressive.\""
+        - generic [ref=e301]:
+          - strong [ref=e302]: James M.
+          - text: Hill farmer, Sutherland
+      - generic [ref=e303]:
+        - generic [ref=e304]:
+          - img [ref=e305]
+          - img [ref=e307]
+          - img [ref=e309]
+          - img [ref=e311]
+          - img [ref=e313]
+        - paragraph [ref=e315]: "\"As an ESG buyer, provenance matters. OHMC's trust labels give us the confidence to use UK credits for our scope 3 reporting.\""
+        - generic [ref=e318]:
+          - strong [ref=e319]: Sarah K.
+          - text: Head of Sustainability, FTSE 250
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - img [ref=e322]
+          - img [ref=e324]
+          - img [ref=e326]
+          - img [ref=e328]
+          - img [ref=e330]
+        - paragraph [ref=e332]: "\"The evidence pack saved us weeks of work. The platform flagged issues before our VVB visit — which meant zero surprises.\""
+        - generic [ref=e335]:
+          - strong [ref=e336]: Dr. Alan T.
+          - text: VVB Ecologist, Scotland
+  - generic [ref=e338]:
+    - generic [ref=e339]:
+      - paragraph [ref=e340]: Data integrity
+      - heading "Real open data. No black boxes." [level=2] [ref=e341]:
+        - text: Real open data.
+        - text: No black boxes.
+      - paragraph [ref=e342]: Every eligibility assessment draws on authoritative open datasets. No proprietary algorithms making unverifiable claims — all sources are named, versioned and auditable.
+      - generic [ref=e344]: Live satellite analysis
+    - generic [ref=e346]:
+      - generic [ref=e347]:
+        - generic [ref=e348]: "01"
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - strong [ref=e351]: Sentinel-2 L2A
+            - generic [ref=e352]: ESA / Copernicus
+          - paragraph [ref=e353]: Vegetation, water, soil indices at 10m resolution
+      - generic [ref=e354]:
+        - generic [ref=e355]: "02"
+        - generic [ref=e356]:
+          - generic [ref=e357]:
+            - strong [ref=e358]: UKCEH Land Cover Maps
+            - generic [ref=e359]: UK Centre for Ecology
+          - paragraph [ref=e360]: UK land-cover classification baseline (LCM2023)
+      - generic [ref=e361]:
+        - generic [ref=e362]: "03"
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - strong [ref=e365]: SoilGrids v2.0
+            - generic [ref=e366]: ISRIC
+          - paragraph [ref=e367]: Soil organic carbon, bulk density, pH
+      - generic [ref=e368]:
+        - generic [ref=e369]: "04"
+        - generic [ref=e370]:
+          - generic [ref=e371]:
+            - strong [ref=e372]: BGS Soil Parent Material
+            - generic [ref=e373]: British Geological Survey
+          - paragraph [ref=e374]: Physico-chemical properties of parent materials
+      - generic [ref=e375]:
+        - generic [ref=e376]: "05"
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - strong [ref=e379]: WCC / Peatland Registry
+            - generic [ref=e380]: WCC / IUCN UK
+          - paragraph [ref=e381]: Project status; double-counting and overlap checks
+  - generic [ref=e384]:
+    - paragraph [ref=e385]: Integrity by design
+    - heading "Built on UK recognised standards." [level=2] [ref=e386]
+    - paragraph [ref=e387]: CarbonOS estimates are never confused with verified credits. Platform estimates are preliminary screening outputs and do not constitute certified carbon credits or guaranteed revenue.
+    - generic [ref=e388]:
+      - generic [ref=e389]: Woodland Carbon Code
+      - generic [ref=e390]: Peatland Code
+      - generic [ref=e391]: IUCN UK Peatland Programme
+      - generic [ref=e392]: UK Land Carbon Registry
+      - generic [ref=e393]: ICVCM Core Carbon Principles
+      - generic [ref=e394]: Science Based Targets
+  - generic [ref=e398]:
+    - paragraph [ref=e399]: Get started today
+    - heading "Ready to discover your land's carbon potential?" [level=2] [ref=e400]:
+      - text: Ready to discover your land's
+      - text: carbon potential?
+    - paragraph [ref=e401]: Draw a boundary. Get a real assessment. No commitment, no cost.
+    - generic [ref=e402]:
+      - button "Start free scan" [ref=e403] [cursor=pointer]:
+        - text: Start free scan
+        - img [ref=e404]
+      - button "Sign in to your account" [ref=e406] [cursor=pointer]
+  - contentinfo [ref=e407]:
+    - generic [ref=e408]:
+      - generic [ref=e409]:
+        - generic [ref=e410] [cursor=pointer]: ohmc
+        - paragraph [ref=e411]: Trusted infrastructure for UK land-based carbon markets. Connecting landowners, verifiers and buyers with integrity.
+        - generic [ref=e412]:
+          - generic [ref=e413]: WCC
+          - generic [ref=e414]: Peatland Code
+          - generic [ref=e415]: IUCN
+      - generic [ref=e416]:
+        - heading "Platform" [level=5] [ref=e417]
+        - link "How It Works" [ref=e418] [cursor=pointer]:
+          - /url: "#"
+        - link "Eligibility Scanner" [ref=e419] [cursor=pointer]:
+          - /url: "#"
+        - link "Marketplace" [ref=e420] [cursor=pointer]:
+          - /url: "#"
+        - link "Partner Portal" [ref=e421] [cursor=pointer]:
+          - /url: "#"
+        - link "Pricing" [ref=e422] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e423]:
+        - heading "Solutions" [level=5] [ref=e424]
+        - link "For Landowners" [ref=e425] [cursor=pointer]:
+          - /url: "#"
+        - link "For Buyers" [ref=e426] [cursor=pointer]:
+          - /url: "#"
+        - link "For VVBs & Partners" [ref=e427] [cursor=pointer]:
+          - /url: "#"
+        - link "For Developers" [ref=e428] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e429]:
+        - heading "Resources" [level=5] [ref=e430]
+        - link "Documentation" [ref=e431] [cursor=pointer]:
+          - /url: "#"
+        - link "Blog" [ref=e432] [cursor=pointer]:
+          - /url: "#"
+        - link "Carbon Standards Guide" [ref=e433] [cursor=pointer]:
+          - /url: "#"
+        - link "Help Centre" [ref=e434] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e435]:
+        - heading "Company" [level=5] [ref=e436]
+        - link "About OHMC" [ref=e437] [cursor=pointer]:
+          - /url: "#"
+        - link "Careers" [ref=e438] [cursor=pointer]:
+          - /url: "#"
+        - link "Press" [ref=e439] [cursor=pointer]:
+          - /url: "#"
+        - link "Contact" [ref=e440] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy Policy" [ref=e441] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=e442]:
+      - generic [ref=e443]: © OHMC 2026. All rights reserved.
+      - generic [ref=e444]: Platform estimates are preliminary screening outputs and do not constitute certified carbon credits, investment advice, or guaranteed revenue.

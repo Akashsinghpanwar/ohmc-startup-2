@@ -1,0 +1,135 @@
+[    2065ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://aplo-evnt.com/api/v1/intent_pixel/track_request?app_id=6632077a934a4c0425f2c39a:0
+[    4785ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api-preview.luckyorange.com/visitors/96a45e35-1780516149675-c28994ef44799172:0
+[    4786ms] Uncaught (in promise) Error: Request failed with status code 404
+    at e.exports (https://tools.luckyorange.com/messenger/js/chunk-vendors.5e9052ad.js:6:68071)
+    at e.exports (https://tools.luckyorange.com/messenger/js/chunk-vendors.5e9052ad.js:12:62180)
+    at w (https://tools.luckyorange.com/messenger/js/chunk-vendors.5e9052ad.js:27:109330)
+[   29409ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://aplo-evnt.com/api/v1/intent_pixel/track_request?app_id=6632077a934a4c0425f2c39a:0
+[ 3297268ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 3297295ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 3297674ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 3297695ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 3297832ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 3297853ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 3297907ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 3297948ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5489804ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 5489806ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5489908ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[ 5489908ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[ 5489948ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 5489948ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5489980ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5489981ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5490060ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 5490061ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5490133ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5491159ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5492161ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5494485ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5495196ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5495197ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5495488ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5497951ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5499004ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5499822ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 5499823ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5499966ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 5499966ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5500035ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5500106ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 5500106ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5504540ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 5504540ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5504907ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5504908ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5504947ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 5504948ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5504988ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 5504989ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5505006ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5505209ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5505209ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5506188ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5507313ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5514790ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5514827ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 5514839ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5514932ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5514933ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5515045ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 5515046ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5515107ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 5515108ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5515896ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5517194ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5519183ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5521443ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5525130ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5530000ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5532278ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5534952ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5534979ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5535032ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5535085ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[ 5535087ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5535139ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[ 5535153ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5535232ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[ 5535233ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5539210ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5539874ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[ 5539875ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[ 5541329ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5543619ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5547622ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5550217ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5555944ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5558856ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5564139ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 5576462ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_ADDRESS_UNREACHABLE @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[ 6873296ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[ 7534308ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[ 8114172ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[ 8114281ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[148416283ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[148464537ms] [ERROR] WebSocket is already in CLOSING or CLOSED state. @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149956785ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149958926ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149962889ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149967185ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149968194ms] [ERROR] WebSocket connection to 'wss://in.visitors.live/socket.io/?EIO=3&transport=websocket' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED @ https://tools.luckyorange.com/core/core.js?v=4bb1511:0
+[149988334ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[150244436ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[150968410ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764:0
+[150968538ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=VCS-1764 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[150968665ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6:0
+[150968678ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-6 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[150968704ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4:0
+[150968715ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=CMARK-4 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[150968756ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613:0
+[150968757ms] [ERROR] Fetch error: https://v25.0.10-canary.0.api.carbonmark.com/prices?projectIds=PUR-175613 @ https://app.carbonmark.com/_next/static/chunks/main-28dcdf9164e51639.js:4
+[226471817ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038
+[226476757ms] InvalidStateError: Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.
+    at i.send (https://tools.luckyorange.com/core/core.js?v=4bb1511:1:75616)
+    at https://tools.luckyorange.com/core/core.js?v=4bb1511:1:77038

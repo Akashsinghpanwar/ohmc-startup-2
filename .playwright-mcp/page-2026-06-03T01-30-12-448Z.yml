@@ -1,0 +1,273 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - button "ohmc Connecting carbon. Creating impact." [ref=e5] [cursor=pointer]:
+      - generic [ref=e6]: ohmc
+      - generic: Connecting carbon. Creating impact.
+    - navigation [ref=e7]:
+      - button "Home" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+        - text: Home
+      - button "Seller Dashboard" [active] [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+        - text: Seller Dashboard
+      - button "Add Land" [ref=e16] [cursor=pointer]:
+        - img [ref=e17]
+        - text: Add Land
+      - button "Carbon Report" [ref=e19] [cursor=pointer]:
+        - img [ref=e20]
+        - text: Carbon Report
+      - button "Eligibility" [ref=e23] [cursor=pointer]:
+        - img [ref=e24]
+        - text: Eligibility
+      - button "Buyer Dashboard" [ref=e27] [cursor=pointer]:
+        - img [ref=e28]
+        - text: Buyer Dashboard
+      - button "Marketplace" [ref=e32] [cursor=pointer]:
+        - img [ref=e33]
+        - text: Marketplace
+      - button "Project Detail" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+        - text: Project Detail
+      - button "Partner Portal" [ref=e40] [cursor=pointer]:
+        - img [ref=e41]
+        - text: Partner Portal
+      - button "Admin" [ref=e45] [cursor=pointer]:
+        - img [ref=e46]
+        - text: Admin
+  - main [ref=e49]:
+    - generic [ref=e243]:
+      - generic [ref=e244]:
+        - generic [ref=e245]:
+          - heading "Welcome back, Glenfinnan Estates" [level=1] [ref=e246]
+          - paragraph [ref=e247]: Here's what's happening with your land and projects.
+        - generic [ref=e248]:
+          - button [ref=e249] [cursor=pointer]:
+            - img [ref=e250]
+          - button "Add New Land Parcel" [ref=e253] [cursor=pointer]:
+            - img [ref=e254]
+            - text: Add New Land Parcel
+          - button "JD" [ref=e255] [cursor=pointer]
+      - generic [ref=e256]:
+        - article [ref=e257]:
+          - img [ref=e258]
+          - generic [ref=e260]: Total Land Parcels
+          - strong [ref=e261]: "7"
+          - generic [ref=e262]: 2,345 ha across Scotland
+        - article [ref=e263]:
+          - img [ref=e264]
+          - generic [ref=e267]: Active Projects
+          - strong [ref=e268]: "3"
+          - generic [ref=e269]: 1,250 ha in progress
+        - article [ref=e270]:
+          - img [ref=e271]
+          - generic [ref=e274]: Pending Documents
+          - strong [ref=e275]: "5"
+          - generic [ref=e276]: Across 3 parcels
+        - article [ref=e277]:
+          - img [ref=e278]
+          - generic [ref=e283]: Buyer Interest
+          - strong [ref=e284]: "12"
+          - generic [ref=e285]: Active conversations
+      - generic [ref=e286]:
+        - generic [ref=e287]:
+          - heading "Project Journey - Glenfinnan North" [level=2] [ref=e288]
+          - button "View full details" [ref=e289] [cursor=pointer]:
+            - text: View full details
+            - img [ref=e290]
+        - paragraph [ref=e292]:
+          - text: "Current status:"
+          - strong [ref=e293]: Evidence Pack In Progress
+          - text: "- Step 4 of 11"
+        - generic [ref=e295]:
+          - generic [ref=e296]:
+            - generic [ref=e297]: v
+            - generic [ref=e298]: Land Submitted
+          - generic [ref=e299]:
+            - generic [ref=e300]: v
+            - generic [ref=e301]: AI Screening
+          - generic [ref=e302]:
+            - generic [ref=e303]: v
+            - generic [ref=e304]: Report Generated
+          - generic [ref=e305]:
+            - generic [ref=e306]: "4"
+            - generic [ref=e307]: Evidence Pack
+          - generic [ref=e308]:
+            - generic [ref=e309]: "5"
+            - generic [ref=e310]: Partner Review
+          - generic [ref=e311]:
+            - generic [ref=e312]: "6"
+            - generic [ref=e313]: Validation Submitted
+          - generic [ref=e314]:
+            - generic [ref=e315]: "7"
+            - generic [ref=e316]: Pending Issuance
+          - generic [ref=e317]:
+            - generic [ref=e318]: "8"
+            - generic [ref=e319]: Monitoring
+          - generic [ref=e320]:
+            - generic [ref=e321]: "9"
+            - generic [ref=e322]: Verification
+          - generic [ref=e323]:
+            - generic [ref=e324]: "10"
+            - generic [ref=e325]: Marketplace Listed
+          - generic [ref=e326]:
+            - generic [ref=e327]: "11"
+            - generic [ref=e328]: Sold / Retired
+        - generic [ref=e329]:
+          - button "View Carbon Report" [ref=e330] [cursor=pointer]:
+            - img [ref=e331]
+            - text: View Carbon Report
+          - button "Upload Documents" [ref=e334] [cursor=pointer]:
+            - img [ref=e335]
+            - text: Upload Documents
+          - button "Request Partner Review" [ref=e338] [cursor=pointer]
+      - generic [ref=e339]:
+        - generic [ref=e340]:
+          - generic [ref=e341]:
+            - heading "Recent Land Parcels" [level=2] [ref=e342]
+            - button "View all parcels" [ref=e343] [cursor=pointer]:
+              - text: View all parcels
+              - img [ref=e344]
+          - table [ref=e346]:
+            - rowgroup [ref=e347]:
+              - row "Glenfinnan North Inverness-shire 580 ha Screening ..." [ref=e348]:
+                - cell "Glenfinnan North" [ref=e349]
+                - cell "Inverness-shire" [ref=e350]
+                - cell "580 ha" [ref=e351]
+                - cell "Screening" [ref=e352]
+                - cell "..." [ref=e353]:
+                  - button "..." [ref=e354] [cursor=pointer]
+              - row "Strath Dochart Woodland Stirling 320 ha Report Ready ..." [ref=e355]:
+                - cell "Strath Dochart Woodland" [ref=e356]
+                - cell "Stirling" [ref=e357]
+                - cell "320 ha" [ref=e358]
+                - cell "Report Ready" [ref=e359]
+                - cell "..." [ref=e360]:
+                  - button "..." [ref=e361] [cursor=pointer]
+              - row "Lochside Moor Perthshire 410 ha Awaiting Review ..." [ref=e362]:
+                - cell "Lochside Moor" [ref=e363]
+                - cell "Perthshire" [ref=e364]
+                - cell "410 ha" [ref=e365]
+                - cell "Awaiting Review" [ref=e366]
+                - cell "..." [ref=e367]:
+                  - button "..." [ref=e368] [cursor=pointer]
+              - row "Auchnacraig Forest Argyll & Bute 615 ha Pre-validation ..." [ref=e369]:
+                - cell "Auchnacraig Forest" [ref=e370]
+                - cell "Argyll & Bute" [ref=e371]
+                - cell "615 ha" [ref=e372]
+                - cell "Pre-validation" [ref=e373]
+                - cell "..." [ref=e374]:
+                  - button "..." [ref=e375] [cursor=pointer]
+              - row "Ben Alder Plateau Highland 420 ha Screening ..." [ref=e376]:
+                - cell "Ben Alder Plateau" [ref=e377]
+                - cell "Highland" [ref=e378]
+                - cell "420 ha" [ref=e379]
+                - cell "Screening" [ref=e380]
+                - cell "..." [ref=e381]:
+                  - button "..." [ref=e382] [cursor=pointer]
+        - generic [ref=e383]:
+          - generic [ref=e384]:
+            - heading "Project Status Overview" [level=2] [ref=e385]
+            - button "View all projects" [ref=e386] [cursor=pointer]:
+              - text: View all projects
+              - img [ref=e387]
+          - generic [ref=e390]:
+            - generic [ref=e391]: "3"
+            - text: Active Projects
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - generic [ref=e394]: 1,250 ha
+              - text: Total Area in Projects
+            - generic [ref=e395]:
+              - generic [ref=e396]: 28,450 tCO2e
+              - text: Est. Carbon Potential
+          - button "Go to Projects" [ref=e397] [cursor=pointer]
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - heading "Main Parcel Overview" [level=2] [ref=e401]
+          - heading "Glenfinnan North" [level=2] [ref=e402]
+          - paragraph [ref=e403]: Inverness-shire - 580 ha
+          - button "Mapped land parcel View Full Map" [ref=e404] [cursor=pointer]:
+            - img "Mapped land parcel" [ref=e405]
+            - img [ref=e406]
+            - generic [ref=e408]:
+              - text: View Full Map
+              - img [ref=e409]
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - heading "Evidence Checklist" [level=2] [ref=e413]
+            - button "View all documents" [ref=e414] [cursor=pointer]:
+              - text: View all documents
+              - img [ref=e415]
+          - generic [ref=e417]:
+            - generic [ref=e418]:
+              - generic [ref=e419]: Land boundary
+              - generic [ref=e420]: Completed
+            - generic [ref=e421]:
+              - generic [ref=e422]: Ownership proof
+              - generic [ref=e423]: Provided
+            - generic [ref=e424]:
+              - generic [ref=e425]: Land use history
+              - generic [ref=e426]: Completed
+            - generic [ref=e427]:
+              - generic [ref=e428]: Soil and baseline data
+              - generic [ref=e429]: In Progress
+            - generic [ref=e430]:
+              - generic [ref=e431]: Stakeholder engagement plan
+              - generic [ref=e432]: Missing
+            - generic [ref=e433]:
+              - generic [ref=e434]: Verifier review
+              - generic [ref=e435]: Required
+          - button "Upload Documents" [ref=e436] [cursor=pointer]:
+            - img [ref=e437]
+            - text: Upload Documents
+      - generic [ref=e440]:
+        - heading "Next Steps" [level=2] [ref=e442]
+        - generic [ref=e443]:
+          - article [ref=e444]:
+            - img [ref=e445]
+            - heading "Upload Ownership Proof" [level=3] [ref=e449]
+            - paragraph [ref=e450]: Submit documents to verify your land.
+            - button "Upload Now" [ref=e451] [cursor=pointer]
+          - article [ref=e452]:
+            - img [ref=e453]
+            - heading "Request Project Report" [level=3] [ref=e456]
+            - paragraph [ref=e457]: Get a carbon opportunity report.
+            - button "Request Report" [ref=e458] [cursor=pointer]
+          - article [ref=e459]:
+            - img [ref=e460]
+            - heading "Book Partner Review" [level=3] [ref=e462]
+            - paragraph [ref=e463]: Schedule a review with approved partners.
+            - button "Book Review" [ref=e464] [cursor=pointer]
+      - generic [ref=e465]:
+        - generic [ref=e466]:
+          - strong [ref=e467]: Trusted, transparent, standards-aligned
+          - generic [ref=e468]: Woodland Carbon Code
+          - generic [ref=e469]: Peatland Code
+          - generic [ref=e470]: puro.earth
+          - generic [ref=e471]: SCI
+          - generic [ref=e472]: IUCN
+          - generic [ref=e473]: UNFCCC
+        - generic [ref=e474]:
+          - generic [ref=e475]:
+            - generic [ref=e476]: ohmc
+            - paragraph [ref=e477]: A climate-tech platform helping landowners and buyers connect with integrity.
+          - generic [ref=e478]:
+            - generic [ref=e479]: Platform
+            - generic [ref=e480]: How It Works
+            - generic [ref=e481]: Platform Modules
+            - generic [ref=e482]: Pricing
+          - generic [ref=e483]:
+            - generic [ref=e484]: Solutions
+            - generic [ref=e485]: For Landowners
+            - generic [ref=e486]: For Buyers
+            - generic [ref=e487]: Partners
+          - generic [ref=e488]:
+            - generic [ref=e489]: Resources
+            - generic [ref=e490]: Guides and Reports
+            - generic [ref=e491]: Help Centre
+            - generic [ref=e492]: Blog
+          - generic [ref=e493]:
+            - generic [ref=e494]: Stay informed
+            - generic [ref=e495]:
+              - text: Email address
+              - img [ref=e496]

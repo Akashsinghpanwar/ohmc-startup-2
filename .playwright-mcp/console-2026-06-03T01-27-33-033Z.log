@@ -1,0 +1,18 @@
+[     648ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:20354
+[     669ms] ReferenceError: React is not defined
+    at App (http://127.0.0.1:5174/src/App.jsx:165:3)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:18761:20)
+    at renderWithHooks (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:5906:24)
+    at updateFunctionComponent (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:7727:21)
+    at beginWork (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:8777:20)
+    at runWithFiberInDEV (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:1249:72)
+    at performUnitOfWork (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:12813:98)
+    at workLoopSync (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:12676:43)
+    at renderRootSync (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:12660:13)
+    at performWorkOnRoot (http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:12079:37)
+[     669ms] [WARNING] %s
+
+%s
+ An error occurred in the <App> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5174/node_modules/.vite/deps/react-dom_client.js?v=6d219e4a:7217
+[     688ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5174/favicon.ico:0
