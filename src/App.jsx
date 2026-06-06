@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import {
-  BarChart3, CheckCircle, CircleDollarSign,
+  BarChart3, CheckCircle, ChevronDown, CircleDollarSign,
   Download, FileCheck, FileText, Leaf, Map, MapPin,
-  Settings, ShieldCheck, TrendingUp,
+  Plus, Settings, ShieldCheck, TrendingUp,
   Upload, Users, AlertTriangle, ArrowRight, Handshake,
   LineChart, Heart, Menu, X, Loader, LogOut
 } from 'lucide-react';
@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage.jsx';
 import AuthPage from './pages/AuthPage.jsx';
 import BoundaryMap from './components/BoundaryMap.jsx';
 import { scanBoundary, listMarketplace, checkHealth, getMe, getToken, setToken, clearToken, registerInterest } from './services/api.js';
+import { generateEligibilityPDF } from './utils/generatePDF.js';
 
 // ─── Single unified navigation — no roles ─────────────────────────────────────
 const NAV = [
@@ -478,6 +479,120 @@ function BoundaryScreen({ setScreen, setScanResult }) {
   );
 }
 
+// ─── Boundary Info Panel ──────────────────────────────────────────────────────
+function BoundaryPanel({ scanResult }) {
+  const geojson   = scanResult?.geometry || null;
+  const coords    = scanResult?.boundary_coordinates || [];
+  const centLat   = scanResult?.centroid_lat;
+  const centLon   = scanResult?.centroid_lon;
+  const placeName = scanResult?.place_name || '';
+  const area_ha   = scanResult?.area_ha || 0;
+  const si        = scanResult?.sentinel_indices || {};
+  const sd        = scanResult?.soil_data || {};
+  const [showAll, setShowAll] = useState(false);
+
+  const displayCoords = showAll ? coords : coords.slice(0, 8);
+  const gmapsUrl = centLat && centLon
+    ? `https://www.google.com/maps?q=${centLat},${centLon}`
+    : null;
+
+  return (
+    <div className="bp-wrapper">
+      {/* Mini map */}
+      <div className="bp-map-col">
+        <BoundaryMap
+          readOnly
+          geojson={geojson}
+          initialCenter={centLat && centLon ? [centLat, centLon] : [57.0, -4.0]}
+          initialZoom={geojson ? 12 : 7}
+        />
+        <div className="bp-map-caption">
+          Drawn boundary · {coords.length} vertices · {area_ha} ha
+        </div>
+      </div>
+
+      {/* Right info */}
+      <div className="bp-info-col">
+        {/* Location */}
+        <div className="bp-section">
+          <div className="bp-section-title"><MapPin size={13} /> Location</div>
+          <div className="bp-location-name">{placeName || 'Unknown location'}</div>
+          <div className="bp-coords-row">
+            <span>Centroid:</span>
+            <code>{centLat?.toFixed(6)}, {centLon?.toFixed(6)}</code>
+            {gmapsUrl && (
+              <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" className="bp-gmaps-link">
+                Google Maps ↗
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Boundary coordinates table */}
+        <div className="bp-section">
+          <div className="bp-section-title"><Map size={13} /> Boundary Vertices</div>
+          <div className="bp-coord-table-wrap">
+            <table className="bp-coord-table">
+              <thead>
+                <tr><th>#</th><th>Latitude</th><th>Longitude</th></tr>
+              </thead>
+              <tbody>
+                {displayCoords.map(c => (
+                  <tr key={c.point}>
+                    <td>{c.point}</td>
+                    <td><code>{c.lat}</code></td>
+                    <td><code>{c.lon}</code></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {coords.length > 8 && (
+            <button className="bp-show-more" onClick={() => setShowAll(v => !v)}>
+              {showAll ? `▲ Show less` : `▼ Show all ${coords.length} points`}
+            </button>
+          )}
+        </div>
+
+        {/* Data provenance */}
+        <div className="bp-section">
+          <div className="bp-section-title">Data Sources Used</div>
+          <div className="bp-source-list">
+            <div className="bp-source-row">
+              <span className="bp-source-dot" style={{ background: '#16a34a' }} />
+              <div>
+                <strong>Sentinel-2 L2A</strong>
+                <span>{si?.data_source || 'Element84 STAC / AWS'}</span>
+                {si?.acquisition_date && <span>Scene date: {si.acquisition_date}</span>}
+                {si?.scene_id && <span className="bp-scene-id">ID: {si.scene_id}</span>}
+                {si?.cloud_cover != null && <span>Cloud cover: {si.cloud_cover.toFixed(1)}%</span>}
+              </div>
+            </div>
+            <div className="bp-source-row">
+              <span className="bp-source-dot" style={{ background: '#2563eb' }} />
+              <div>
+                <strong>SoilGrids v2.0</strong>
+                <span>{sd?.data_source || 'ISRIC World Soil Information'}</span>
+                {centLat && centLon && (
+                  <span>Query point: {centLat.toFixed(4)}°N, {centLon.toFixed(4)}°E</span>
+                )}
+              </div>
+            </div>
+            <div className="bp-source-row">
+              <span className="bp-source-dot" style={{ background: '#7c3aed' }} />
+              <div>
+                <strong>Area calculation</strong>
+                <span>pyproj Geod (WGS84 ellipsoid) — {area_ha} ha</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 // ─── Eligibility Results ──────────────────────────────────────────────────────
 function EligibilityScreen({ setScreen, scanResult }) {
   const [rulesOpen, setRulesOpen] = useState({ wcc: true, peat: true });
@@ -512,6 +627,7 @@ function EligibilityScreen({ setScreen, scanResult }) {
   const ce         = scanResult.carbon_estimate      || null;
   const mlScores   = scanResult.ml_scores            || {};
   const nextSteps  = scanResult.next_steps           || [];
+  const placeName  = scanResult.place_name           || '';
 
   const pathwayLabel = pathway === 'peatland' ? 'Peatland Code'
     : pathway === 'wcc' ? 'Woodland Carbon Code' : 'No clear pathway';
@@ -520,7 +636,7 @@ function EligibilityScreen({ setScreen, scanResult }) {
     <div className="page">
       <PageHeader
         title="Eligibility Results"
-        subtitle={`${land_name} · ${area_ha} ha · Processed in ${ptMs}ms`}
+        subtitle={`${land_name}${placeName ? ` · ${placeName}` : ''} · ${area_ha} ha · ${ptMs}ms`}
         action={
           <div className="btn-row">
             <button className="btn-outline" onClick={() => setScreen('report')}><FileText size={13} /> Full Report</button>
@@ -529,6 +645,11 @@ function EligibilityScreen({ setScreen, scanResult }) {
         }
       />
       <Disclaimer />
+
+      {/* Boundary map + coordinates */}
+      <Card title="Selected Land Boundary">
+        <BoundaryPanel scanResult={scanResult} />
+      </Card>
 
       {/* Score hero */}
       <div className="score-hero">
@@ -659,71 +780,285 @@ function EligibilityScreen({ setScreen, scanResult }) {
 
 // ─── Carbon Report ────────────────────────────────────────────────────────────
 function ReportScreen({ setScreen, scanResult }) {
+  const [pdfLoading, setPdfLoading] = useState(false);
+  const [pdfDone, setPdfDone]       = useState(null);
+
+  const handleDownloadPDF = async () => {
+    setPdfLoading(true); setPdfDone(null);
+    try {
+      const filename = await generateEligibilityPDF(scanResult);
+      setPdfDone(filename);
+    } catch (e) {
+      console.error('PDF error:', e);
+      setPdfDone('error');
+    } finally {
+      setPdfLoading(false);
+    }
+  };
+
   if (!scanResult) return (
     <div className="page">
       <PageHeader title="Carbon Report" subtitle="Complete a land scan first." />
-      <div className="empty-state"><FileText size={40} /><p>No scan data.</p>
-        <button className="btn-primary" onClick={() => setScreen('boundary')}>Scan My Land</button>
+      <div className="empty-state">
+        <FileText size={40} />
+        <p>No scan data yet. Draw a land boundary and run an eligibility scan first.</p>
+        <button className="btn-primary" onClick={() => setScreen('boundary')}><Map size={14} /> Scan My Land</button>
       </div>
     </div>
   );
 
-  const { land_name, area_ha, carbon_estimate: ce, soil_data: sd, sentinel_indices: si, eligibility_score, recommended_pathway, next_steps } = scanResult;
+  const {
+    land_name = 'Unknown Parcel',
+    area_ha   = 0,
+    eligibility_score = 0,
+    confidence = 'unknown',
+    recommended_pathway = '',
+    processing_time_ms = 0,
+    carbon_estimate: ce = null,
+    soil_data: sd       = {},
+    sentinel_indices: si = {},
+    land_cover: lc      = {},
+    wcc_rules           = [],
+    peatland_rules      = [],
+    ml_scores           = {},
+    next_steps          = [],
+  } = scanResult;
+
+  const refId = `OHMC-RPT-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`;
+  const genDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const pathwayLabel = recommended_pathway === 'peatland' ? 'Peatland Code'
+    : recommended_pathway === 'wcc' ? 'Woodland Carbon Code' : 'No clear pathway';
+  const scoreColor = eligibility_score >= 70 ? '#16a34a' : eligibility_score >= 45 ? '#d97706' : '#dc2626';
 
   return (
-    <div className="page">
-      <PageHeader title="Carbon Opportunity Report" subtitle={`${land_name} — Preliminary Assessment`}
-        action={<button className="btn-outline"><Download size={14} /> Download PDF</button>} />
+    <div className="page rpt-page">
+
+      {/* ── Report Header ── */}
+      <div className="rpt-header">
+        <div className="rpt-header-left">
+          <div className="rpt-logo-row">
+            <img src={logoImg} alt="OHMC" className="rpt-logo" />
+            <div>
+              <div className="rpt-company">OHMC CarbonOS</div>
+              <div className="rpt-tagline">Carbon Eligibility &amp; Opportunity Report</div>
+            </div>
+          </div>
+          <h1 className="rpt-parcel-name">{land_name}</h1>
+          <p className="rpt-parcel-sub">Preliminary Assessment · {area_ha} hectares · {genDate}</p>
+        </div>
+        <div className="rpt-header-right">
+          <div className="rpt-score-block" style={{ borderColor: scoreColor }}>
+            <div className="rpt-score-num" style={{ color: scoreColor }}>{eligibility_score}</div>
+            <div className="rpt-score-denom">/ 100</div>
+            <div className="rpt-score-label">Eligibility Score</div>
+          </div>
+          <div className="rpt-meta">
+            <div><span>Ref</span><strong>{refId}</strong></div>
+            <div><span>Generated</span><strong>{genDate}</strong></div>
+            <div><span>Valid</span><strong>90 days</strong></div>
+            <div><span>Pathway</span><strong>{pathwayLabel}</strong></div>
+            <div><span>Confidence</span><strong>{confidence}</strong></div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── PDF button + status ── */}
+      <div className="rpt-actions-bar">
+        <button
+          className={`rpt-pdf-btn ${pdfLoading ? 'loading' : ''}`}
+          onClick={handleDownloadPDF}
+          disabled={pdfLoading}
+        >
+          {pdfLoading
+            ? <><Loader size={15} className="spin" /> Generating PDF…</>
+            : <><Download size={15} /> Download PDF Report</>}
+        </button>
+        <button className="btn-outline" onClick={() => setScreen('eligibility')}>
+          <ShieldCheck size={14} /> View Eligibility
+        </button>
+        <button className="btn-outline" onClick={() => setScreen('partner')}>
+          <Handshake size={14} /> Partner Review
+        </button>
+        {pdfDone && pdfDone !== 'error' && (
+          <span className="rpt-pdf-success"><CheckCircle size={13} /> Saved: {pdfDone}</span>
+        )}
+        {pdfDone === 'error' && (
+          <span className="rpt-pdf-error"><AlertTriangle size={13} /> PDF generation failed</span>
+        )}
+      </div>
+
       <Disclaimer />
 
-      <div className="report-meta-bar">
-        <span>Ref: OHMC-RPT-2026-{String(Date.now()).slice(-4)}</span>
-        <span>Generated: {new Date().toLocaleDateString('en-GB')}</span>
-        <span>Valid 90 days · Not a verified credit</span>
+      {/* ── Summary metrics ── */}
+      <div className="rpt-metrics">
+        <div className="rpt-metric accent">
+          <ShieldCheck size={18} />
+          <div className="rpt-metric-val" style={{ color: scoreColor }}>{eligibility_score}<span>/100</span></div>
+          <div className="rpt-metric-lbl">Eligibility Score</div>
+        </div>
+        <div className="rpt-metric">
+          <Map size={18} />
+          <div className="rpt-metric-val">{area_ha}<span> ha</span></div>
+          <div className="rpt-metric-lbl">Area Assessed</div>
+        </div>
+        {ce && (
+          <div className="rpt-metric">
+            <TrendingUp size={18} />
+            <div className="rpt-metric-val">{ce.net_units_tco2e?.toLocaleString()}<span> tCO₂e</span></div>
+            <div className="rpt-metric-lbl">Indicative Carbon</div>
+          </div>
+        )}
+        {ce && (
+          <div className="rpt-metric">
+            <CircleDollarSign size={18} />
+            <div className="rpt-metric-val">£{ce.mid_value_gbp?.toLocaleString()}</div>
+            <div className="rpt-metric-lbl">Mid Value (gross)</div>
+          </div>
+        )}
+        <div className="rpt-metric">
+          <Leaf size={18} />
+          <div className="rpt-metric-val" style={{ fontSize: 13 }}>{pathwayLabel}</div>
+          <div className="rpt-metric-lbl">Pathway</div>
+        </div>
       </div>
 
-      <div className="report-score-row">
-        <Metric icon={ShieldCheck}       label="Eligibility Score"     value={`${eligibility_score}%`}                                      accent />
-        <Metric icon={Map}               label="Area Assessed"          value={`${area_ha} ha`} />
-        {ce && <Metric icon={TrendingUp} label="Est. Carbon Potential"  value={`${ce.net_units_tco2e?.toLocaleString()} tCO₂e`} />}
-        {ce && <Metric icon={CircleDollarSign} label="Mid Value (gross)" value={`£${ce.mid_value_gbp?.toLocaleString()}`} note="indicative" />}
+      {/* ── Boundary ── */}
+      <Card title="Selected Land Boundary">
+        <BoundaryPanel scanResult={scanResult} />
+      </Card>
+
+      {/* ── Satellite data ── */}
+      <Card title="Satellite Data — Sentinel-2 L2A (ESA Copernicus)">
+        <p className="data-source">{si?.data_source}{si?.acquisition_date ? ` · ${si.acquisition_date}` : ''}{si?.cloud_cover != null ? ` · ${si.cloud_cover.toFixed(1)}% cloud cover` : ''}</p>
+        <div className="rpt-sat-grid">
+          {[
+            ['NDVI', si?.ndvi, 'Vegetation density', '#16a34a'],
+            ['NDWI', si?.ndwi, 'Wetness / moisture', '#2563eb'],
+            ['NDMI', si?.ndmi, 'Canopy moisture',    '#7c3aed'],
+            ['BSI',  si?.bare_soil_index, 'Bare soil index', '#d97706'],
+          ].map(([name, val, desc, color]) => (
+            <div key={name} className="rpt-sat-card">
+              <div className="rpt-sat-name" style={{ color }}>{name}</div>
+              <div className="rpt-sat-val">{val != null ? Number(val).toFixed(4) : 'N/A'}</div>
+              <div className="rpt-sat-bar">
+                <div className="rpt-sat-fill" style={{ width: `${val != null ? ((val+1)/2)*100 : 0}%`, background: color }} />
+              </div>
+              <div className="rpt-sat-desc">{desc}</div>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* ── Soil + Land cover ── */}
+      <div className="two-col-grid">
+        <Card title="Soil Properties — SoilGrids v2.0 (ISRIC)">
+          <p className="data-source">{sd?.data_source || 'ISRIC SoilGrids v2.0 · 250m resolution'}</p>
+          <StatRow label="Organic Carbon (SOC)" value={sd?.organic_carbon_g_per_kg != null ? `${sd.organic_carbon_g_per_kg} g/kg` : 'N/A'} />
+          <StatRow label="Bulk Density"          value={sd?.bulk_density_kg_per_m3   != null ? `${sd.bulk_density_kg_per_m3} kg/m³` : 'N/A'} />
+          <StatRow label="pH"                    value={sd?.ph != null ? sd.ph : 'N/A'} />
+          <StatRow label="Soil Classification"
+            value={sd?.is_peat ? 'Deep Peat (SOC ≥ 200 g/kg)' : sd?.is_peaty ? 'Peaty Mineral' : 'Mineral Soil'}
+            badge
+            badgeCls={sd?.is_peat ? 'badge-amber' : sd?.is_peaty ? 'badge-blue' : 'badge-gray'} />
+        </Card>
+
+        <Card title="Land Cover — UKCEH LCM2023">
+          <p className="data-source">{lc?.data_source || 'UK Countryside Survey 2023'}</p>
+          <StatRow label="Dominant Class" value={lc?.dominant_class || 'N/A'} badge badgeCls="badge-green" />
+          {[
+            ['Peatland / Heather', lc?.peatland_fraction],
+            ['Woodland',           lc?.woodland_fraction],
+            ['Grassland',          lc?.grassland_fraction],
+          ].map(([label, fraction]) => (
+            <div key={label} className="cover-row">
+              <span>{label}</span>
+              <div className="cover-bar"><div className="cover-fill" style={{ width: `${(fraction ?? 0)*100}%` }} /></div>
+              <span>{((fraction ?? 0)*100).toFixed(0)}%</span>
+            </div>
+          ))}
+        </Card>
       </div>
 
+      {/* ── WCC + Peatland rules summary ── */}
+      <div className="two-col-grid">
+        {[
+          ['Woodland Carbon Code Rules', wcc_rules,      '#16a34a'],
+          ['Peatland Code Rules',        peatland_rules, '#d97706'],
+        ].map(([title, rules, color]) => (
+          <Card key={title} title={title}>
+            {rules.length === 0
+              ? <p style={{ fontSize: 13, color: 'var(--slate-400)' }}>No rule data available.</p>
+              : <>
+                  <div className="rpt-rules-summary">
+                    <span className="rpt-rules-pass" style={{ color }}>
+                      {rules.filter(r => r?.passed).length} passed
+                    </span>
+                    <span className="rpt-rules-fail">
+                      {rules.filter(r => !r?.passed).length} failed
+                    </span>
+                    <span>of {rules.length} rules</span>
+                  </div>
+                  {rules.map((r, i) => (
+                    <div key={i} className={`rule-row ${r?.passed ? 'pass' : 'fail'}`}>
+                      <span className="rule-icon">{r?.passed ? '✓' : '✗'}</span>
+                      <div>
+                        <strong>{r?.rule}</strong>
+                        <small>{r?.value}{r?.note ? ` — ${r.note}` : ''}</small>
+                      </div>
+                    </div>
+                  ))}
+                </>
+            }
+          </Card>
+        ))}
+      </div>
+
+      {/* ── Carbon estimate ── */}
       {ce && (
-        <Card title="Financial Projections (Indicative — Not a guarantee)">
+        <Card title="Carbon Estimate — Deterministic Model · Pre-screening only" className="estimate-card">
           <Disclaimer />
-          <div className="fin-table">
+          <div className="estimate-grid">
             {[
-              [`Low estimate (${ce.crediting_years}yr gross)`,  `£${ce.low_value_gbp?.toLocaleString()}`,  `at £${ce.price_low}/tCO₂e`],
-              [`Mid estimate (${ce.crediting_years}yr gross)`,  `£${ce.mid_value_gbp?.toLocaleString()}`,  `at £${ce.price_mid}/tCO₂e`],
-              [`High estimate (${ce.crediting_years}yr gross)`, `£${ce.high_value_gbp?.toLocaleString()}`, `at £${ce.price_high}/tCO₂e`],
-              [`Annual average (mid)`, `£${ce.mid_value_gbp ? Math.round(ce.mid_value_gbp/ce.crediting_years).toLocaleString() : 'N/A'}`, 'per year gross'],
-            ].map(([l,v,n]) => (
-              <div key={l} className="fin-row"><span>{l}</span><strong>{v}</strong><small>{n}</small></div>
+              ['Pathway',        ce.pathway === 'peatland' ? 'Peatland Code' : 'WCC'],
+              ['Eligible Area',  `${ce.eligible_area_ha} ha`],
+              ['Crediting Period', `${ce.crediting_years} years`],
+              ['Annual Rate',    `${ce.annual_rate_tco2e_per_ha} tCO₂e/ha/yr`],
+              ['Net Units',      `${ce.net_units_tco2e?.toLocaleString()} tCO₂e`],
+              ['Confidence',     ce.confidence_band],
+            ].map(([k, v]) => (
+              <div key={k} className="estimate-item"><span>{k}</span><strong>{v}</strong></div>
+            ))}
+          </div>
+          <div className="value-range">
+            {[
+              ['low',  'Low',  ce.price_low,  ce.low_value_gbp],
+              ['mid',  'Mid',  ce.price_mid,  ce.mid_value_gbp],
+              ['high', 'High', ce.price_high, ce.high_value_gbp],
+            ].map(([cls, label, price, val]) => (
+              <div key={cls} className={`value-col ${cls}`}>
+                <span>{label} (£{price}/t)</span>
+                <strong>£{val?.toLocaleString()}</strong>
+                <small>£{Math.round(val / ce.crediting_years).toLocaleString()} / yr</small>
+              </div>
             ))}
           </div>
         </Card>
       )}
 
-      <div className="two-col-grid">
-        <Card title="Soil Properties">
-          <StatRow label="Organic Carbon" value={`${sd.organic_carbon_g_per_kg ?? 'N/A'} g/kg`} />
-          <StatRow label="pH" value={sd.ph ?? 'N/A'} />
-          <StatRow label="Peat Status" value={sd.is_peat ? 'Deep Peat' : sd.is_peaty ? 'Peaty' : 'Mineral'} badge />
-        </Card>
-        <Card title="Spectral Indices">
-          <StatRow label="NDVI" value={si.ndvi?.toFixed(3) ?? 'N/A'} />
-          <StatRow label="NDWI" value={si.ndwi?.toFixed(3) ?? 'N/A'} />
-          <StatRow label="NDMI" value={si.ndmi?.toFixed(3) ?? 'N/A'} />
-          <StatRow label="Acquisition" value={si.acquisition_date ?? 'N/A'} />
-        </Card>
-      </div>
-
+      {/* ── Next steps ── */}
       <Card title="Recommended Next Steps">
-        <ol className="steps-list">{next_steps?.map((s, i) => <li key={i}>{s}</li>)}</ol>
+        <ol className="steps-list">
+          {next_steps.length > 0
+            ? next_steps.map((s, i) => <li key={i}>{s}</li>)
+            : <li>Run a scan to generate recommended next steps.</li>}
+        </ol>
         <div className="report-actions">
-          <button className="btn-primary" onClick={() => setScreen('partner')}>Proceed to Partner Review <ArrowRight size={14} /></button>
-          <button className="btn-outline" onClick={() => setScreen('eligibility')}>Back to Eligibility</button>
+          <button className="btn-primary" onClick={() => setScreen('partner')}>
+            Proceed to Partner Review <ArrowRight size={14} />
+          </button>
+          <button className="btn-outline" onClick={handleDownloadPDF} disabled={pdfLoading}>
+            {pdfLoading ? <><Loader size={13} className="spin" /> Generating…</> : <><Download size={13} /> Download PDF</>}
+          </button>
         </div>
       </Card>
 

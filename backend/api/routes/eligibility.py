@@ -6,6 +6,7 @@ import time
 import uuid
 import asyncio
 import logging
+import httpx
 from fastapi import APIRouter, HTTPException, Header
 from pydantic import BaseModel
 from typing import Optional
@@ -77,6 +78,17 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
     lat = sum(c[1] for c in coords) / len(coords) if coords else 0
     lon = sum(c[0] for c in coords) / len(coords) if coords else 0
 
+    # ── Reverse geocode centroid (Nominatim, free) ─────────────────────────────
+    place_name = await _reverse_geocode(lat, lon)
+
+    # ── Boundary coordinates list ─────────────────────────────────────────────
+    # Exclude the closing duplicate point (first == last in a closed polygon)
+    boundary_pts = coords[:-1] if (coords and coords[0] == coords[-1]) else coords
+    boundary_coordinates = [
+        {"point": i + 1, "lat": round(c[1], 6), "lon": round(c[0], 6)}
+        for i, c in enumerate(boundary_pts)
+    ]
+
     ms = round((time.time() - t0) * 1000)
 
     next_steps = _next_steps(pathway, ml_elig["eligibility_score"])
@@ -133,6 +145,9 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
         "area_ha": area_ha,
         "centroid_lat": round(lat, 6),
         "centroid_lon": round(lon, 6),
+        "place_name": place_name,
+        "boundary_coordinates": boundary_coordinates,
+        "geometry": geometry,
         "recommended_pathway": pathway.value,
         "eligibility_score": ml_elig["eligibility_score"],
         "confidence": ml_elig["confidence_level"],
@@ -177,6 +192,29 @@ async def get_scan(scan_id: str):
             r[f] = json.loads(r[f])
     r["id"] = str(r["id"])
     return r
+
+
+async def _reverse_geocode(lat: float, lon: float) -> str:
+    """Nominatim reverse geocode — returns a human-readable place name."""
+    try:
+        async with httpx.AsyncClient(timeout=5, headers={"User-Agent": "OHMC-CarbonOS/1.0"}) as client:
+            resp = await client.get(
+                "https://nominatim.openstreetmap.org/reverse",
+                params={"lat": lat, "lon": lon, "format": "json", "zoom": 10},
+            )
+            data = resp.json()
+            addr = data.get("address", {})
+            parts = []
+            for key in ("village", "town", "city", "county", "state_district", "state", "country"):
+                val = addr.get(key)
+                if val and val not in parts:
+                    parts.append(val)
+                if len(parts) == 3:
+                    break
+            return ", ".join(parts) if parts else data.get("display_name", "Unknown location")
+    except Exception as e:
+        logger.warning(f"Reverse geocode failed: {e}")
+        return "Location unavailable"
 
 
 def _is_scotland(geometry: dict) -> bool:
