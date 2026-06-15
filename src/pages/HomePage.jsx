@@ -1,324 +1,598 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logoImg from '../assets/logo.png';
 import {
   ArrowRight, CheckCircle, Map, ShieldCheck, FileText,
-  Handshake, TrendingUp, Star, Menu, X, AlertTriangle,
-  Lock, BarChart3, Leaf, Users
+  Handshake, Menu, X, AlertTriangle,
+  Leaf, Users, Building2, PencilLine, SatelliteDish, PoundSterling,
+  ExternalLink, TrendingUp
 } from 'lucide-react';
-
-const IMGS = {
-  hero:    'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=2000&q=85',
-  peat:    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80',
-  sat:     'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
-  gallery: [
-    'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80',
-  ],
-};
+import { checkHealth } from '../services/api.js';
 
 // ── Nav ───────────────────────────────────────────────────────────────────────
 function PublicNav({ goTo }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 12);
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  const links = [
+    ['How it works', '#how'],
+    ["Who it's for", '#who'],
+    ['Standards', '#standards'],
+  ];
+
   return (
-    <nav className="pub-nav">
+    <nav className={`pub-nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="pub-nav-inner">
         <button className="pub-logo" onClick={() => goTo('home')}>
-          <img src={logoImg} alt="OHMC" className="pub-logo-img" />
+          <img src={logoImg} alt="OHMC" />
+          <span>CarbonOS</span>
         </button>
+
         <div className={`pub-links ${open ? 'open' : ''}`}>
-          {[['How It Works', '#how'],['The Problem', '#problem'],['For Landowners', '#landowners'],['Marketplace', 'marketplace']].map(([label, href]) => (
-            <a key={label} className="pub-link"
-              href={href.startsWith('#') ? href : undefined}
-              onClick={href === 'marketplace' ? e => { e.preventDefault(); goTo('app', 'marketplace'); setOpen(false); } : () => setOpen(false)}>
+          {links.map(([label, href]) => (
+            <a key={label} className="pub-link" href={href} onClick={() => setOpen(false)}>
               {label}
             </a>
           ))}
-          <button className="pub-login" onClick={() => { goTo('login'); setOpen(false); }}>Log in</button>
-          <button className="pub-cta" onClick={() => { goTo('signup'); setOpen(false); }}>
-            Start free scan <ArrowRight size={14} />
+          <a
+            className="pub-link"
+            href="#marketplace"
+            onClick={e => { e.preventDefault(); goTo('app', 'marketplace'); setOpen(false); }}
+          >
+            Marketplace
+          </a>
+          <div className="pub-nav-spacer" />
+          <button className="btn btn-ghost" onClick={() => { goTo('login'); setOpen(false); }}>
+            Sign in
+          </button>
+          <button className="btn btn-primary" onClick={() => { goTo('signup'); setOpen(false); }}>
+            Check my land — free
           </button>
         </div>
-        <button className="pub-hamburger" onClick={() => setOpen(v => !v)}>
-          {open ? <X size={22} /> : <Menu size={22} />}
+
+        <button className="pub-burger" onClick={() => setOpen(v => !v)} aria-label="Menu">
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
     </nav>
   );
 }
 
-// ── Hero ──────────────────────────────────────────────────────────────────────
+// ── Market data strip — real sourced numbers ──────────────────────────────────
+function MarketDataBar() {
+  const stats = [
+    {
+      value: '£26.85',
+      unit: '/tCO₂e',
+      label: 'UK WCC average PIU price',
+      source: 'WCC Annual Report 2024',
+      href: 'https://www.woodlandcarboncode.org.uk',
+    },
+    {
+      value: '1.4M',
+      unit: ' ha',
+      label: 'degraded UK peatland',
+      source: 'IUCN UK Peatland Programme',
+      href: 'https://www.iucn-uk-peatlandprogramme.org',
+    },
+    {
+      value: '4×',
+      unit: '',
+      label: 'UK vs global carbon price',
+      source: 'VCMI 2024',
+      href: 'https://vcmintegrity.org',
+    },
+    {
+      value: '80%',
+      unit: '',
+      label: 'eligible land is in Scotland',
+      source: 'UK Peatland Code',
+      href: 'https://www.peatlandcode.org.uk',
+    },
+  ];
+
+  return (
+    <div className="hp-market-bar">
+      <div className="hp-market-bar-inner">
+        <div className="hp-market-bar-label">
+          <TrendingUp size={13} />
+          Live market context
+        </div>
+        {stats.map(({ value, unit, label, source, href }) => (
+          <div key={label} className="hp-market-stat">
+            <div className="hp-market-stat-num">
+              {value}<span>{unit}</span>
+            </div>
+            <div className="hp-market-stat-label">{label}</div>
+            <a
+              className="hp-market-stat-source"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {source} <ExternalLink size={9} />
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── Hero — full width, no fake data ──────────────────────────────────────────
 function Hero({ goTo }) {
   return (
-    <section className="hp-hero" style={{ backgroundImage: `url(${IMGS.hero})` }}>
-      <div className="hp-hero-overlay" />
-      <div className="hp-hero-content">
-        <div className="hp-hero-left">
-          <div className="hp-eyebrow">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland-first · Standards-aligned · Trusted mediator</div>
-          <h1 className="hp-h1">
-            The people who own<br />
-            the land cannot access<br />
-            the markets built for it.
-          </h1>
-          <p className="hp-sub">
-            OHMC CarbonOS is first-mile infrastructure for UK land-based carbon markets.
-            We connect small landowners, farmers and crofters to the Woodland Carbon Code
-            and Peatland Code — with real satellite screening, standards-bound assessment
-            and verified buyer matching.
-          </p>
-          <div className="hp-actions">
-            <button className="hp-btn-primary" onClick={() => goTo('signup')}>
-              Scan My Land Free <ArrowRight size={16} />
-            </button>
-            <button className="hp-btn-outline-green" onClick={() => goTo('app', 'marketplace')}>
-              Browse Projects
-            </button>
-          </div>
-          <div className="hp-trust-strip">
-            {['Woodland Carbon Code', 'Peatland Code', 'IUCN UK', 'UK Land Carbon Registry', 'Sentinel-2 MRV'].map(l => (
-              <span key={l}><CheckCircle size={13} />{l}</span>
-            ))}
-          </div>
-          <div className="hp-hero-disclaimer">
-            <AlertTriangle size={12} />
-            Platform estimates are preliminary only — not verified credits. Independent VVB validation required before any official claim.
-          </div>
+    <section className="hp-hero" id="product">
+      <div className="hp-hero-center">
+        <div className="hp-eyebrow">
+          <span className="hp-eyebrow-dot" />
+          For UK farmers, crofters and estates
         </div>
+        <h1>
+          Find out what your land<br />
+          <span>is worth in carbon —</span><br />
+          free, in 60 seconds.
+        </h1>
+        <p className="hp-hero-lead">
+          OHMC CarbonOS runs a live Sentinel-2 satellite scan and SoilGrids soil analysis
+          on your exact boundary, then checks every rule of the Woodland Carbon Code
+          and Peatland Code to give you an eligibility score and value range. No guesses.
+          No consultants. No cost for your first answer.
+        </p>
+        <div className="hp-actions">
+          <button className="btn btn-primary btn-lg" onClick={() => goTo('signup')}>
+            Check my land — free <ArrowRight size={15} />
+          </button>
+          <a className="btn btn-secondary btn-lg" href="#how">
+            How it works
+          </a>
+        </div>
+        <div className="hp-trust">
+          {[
+            'Woodland Carbon Code',
+            'Peatland Code',
+            'ESA Sentinel-2',
+            'SoilGrids / ISRIC',
+          ].map(l => (
+            <span key={l}><CheckCircle size={13} /> {l}</span>
+          ))}
+        </div>
+      </div>
+      <MarketDataBar />
+    </section>
+  );
+}
+
+// ── 3-step explainer strip ────────────────────────────────────────────────────
+function ExplainerStrip() {
+  const steps = [
+    {
+      icon: PencilLine,
+      title: 'Draw your land',
+      body: 'Trace your field, moor or woodland on a satellite map. No paperwork, no site visit, no cost.',
+    },
+    {
+      icon: SatelliteDish,
+      title: 'We run the checks',
+      body: 'Live Sentinel-2 imagery, SoilGrids soil data and UK scheme rules are applied to your exact boundary.',
+    },
+    {
+      icon: PoundSterling,
+      title: 'Get your number',
+      body: 'An eligibility score out of 100, a value range in pounds, and a full PDF report to keep.',
+    },
+  ];
+  return (
+    <section className="hp-explainer" id="steps">
+      <div className="hp-explainer-inner">
+        {steps.map(({ icon: Icon, title, body }, i) => (
+          <div key={title} className="hp-explainer-step">
+            <div className="hp-explainer-icon"><Icon size={19} /></div>
+            <div>
+              <h3><span>{i + 1}.</span> {title}</h3>
+              <p>{body}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-// ── Market Stats ──────────────────────────────────────────────────────────────
-function MarketStats() {
-  return (
-    <section className="hp-stats">
-      {[
-        { value: '£617M',    label: 'Scottish WCC pipeline value',    sub: 'Lifetime gross (WCC stats + £26.85/t)' },
-        { value: '£26.85',   label: 'Avg WCC PIU price per tonne',    sub: 'vs global avg $6.37 — 4× premium' },
-        { value: '1.4M ha',  label: 'Degraded Scottish peatland',     sub: '250,000 ha target by 2030' },
-        { value: '~80%',     label: 'UK carbon is in Scotland',       sub: 'By registered WCC hectares' },
-      ].map(({ value, label, sub }) => (
-        <div key={label} className="hp-stat">
-          <strong>{value}</strong>
-          <p>{label}</p>
-          <small>{sub}</small>
-        </div>
-      ))}
-    </section>
+// ── How it works — step-by-step ───────────────────────────────────────────────
+function StepVisual({ step }) {
+  if (step === 0) return (
+    <div className="how-visual">
+      <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="360" height="200" fill="#ddf0c8" rx="8" />
+        <path d="M0 60 C80 48 150 76 230 64 C290 56 330 68 360 60 L360 0 L0 0 Z" fill="#c8e6b0" />
+        <g fill="none" stroke="#1a3d20" strokeOpacity="0.12" strokeWidth="0.9">
+          <path d="M0 110 C90 98 180 126 270 112 S340 96 360 104" />
+          <path d="M0 168 C100 158 190 184 280 170 S345 154 360 162" />
+        </g>
+        <path d="M70 130 L130 80 L200 100 L260 62 L320 88 L325 134 L250 150 L170 142 L110 156 Z"
+          fill="#1a3d20" fillOpacity="0.13" stroke="#1a3d20" strokeWidth="2" strokeLinejoin="round" strokeDasharray="7 5" />
+        {[[130, 80], [200, 100], [260, 62], [320, 88], [325, 134], [250, 150], [170, 142], [110, 156], [70, 130]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="4.5" fill={i === 0 ? '#1a3d20' : '#fff'} stroke="#1a3d20" strokeWidth="2" />
+        ))}
+        <rect x="12" y="12" width="134" height="26" rx="5" fill="#fff" stroke="#c8e6b0" />
+        <text x="22" y="29" fill="#1a3d20" fontSize="12" fontFamily="Inter, sans-serif">Click to add points…</text>
+      </svg>
+    </div>
   );
-}
-
-// ── Gallery ───────────────────────────────────────────────────────────────────
-function LandGallery() {
-  const labels = ['Aerial Farmland', 'Native Woodland', 'Upland Moors', 'Highland Hills', 'Pine Forest', 'Peatland'];
-  return (
-    <div className="hp-gallery">
-      {IMGS.gallery.map((src, i) => (
-        <div key={i} className="hp-gallery-item" style={{ backgroundImage: `url(${src})` }}>
-          <span className="hp-gallery-label">{labels[i]}</span>
+  if (step === 1) return (
+    <div className="how-visual how-visual-panel">
+      <div className="how-mock-score">
+        <span className="badge badge-green">Likely eligible</span>
+        <div>
+          <h5>Peatland Code pathway</h5>
+          <p>Confidence: high · a preliminary estimate, not a verified credit</p>
+        </div>
+      </div>
+      {[
+        ['Eligible area meets the code minimum', true],
+        ['Peat or peaty soil present', true],
+        ['Degraded condition — restoration additional', true],
+        ['Not already woodland', true],
+        ['No registry overlap or double-counting', true],
+      ].map(([rule, pass]) => (
+        <div key={rule} className={`how-mock-rule ${pass ? 'pass' : 'fail'}`}>
+          <span>{pass ? '✓' : '✕'}</span> {rule}
         </div>
       ))}
+      <p style={{ fontSize: 11, color: 'var(--ink-soft)', marginTop: 8 }}>
+        A go / investigate / no-go decision against the Woodland Carbon Code and
+        Peatland Code — with a value range and confidence, never a false-precise number.
+      </p>
+    </div>
+  );
+  if (step === 2) return (
+    <div className="how-visual how-visual-panel">
+      <div className="how-mock-doc">
+        <div className="how-mock-doc-head">
+          <FileText size={16} />
+          <div>
+            <strong>Evidence pack</strong>
+            <span>Structured for an approved verifier</span>
+          </div>
+          <span className="mock-chip">PDF</span>
+        </div>
+        {[
+          'Boundary map and coordinates',
+          'Sentinel-2 indices: NDVI, NDWI, bare-soil',
+          'Soil baseline and land-cover context',
+          'Rule-by-rule pass/fail with reason codes',
+          'Value range with assumptions and confidence',
+          'Site-risk notes and partner next steps',
+        ].map(line => (
+          <div key={line} className="how-mock-doc-row"><CheckCircle size={13} /> {line}</div>
+        ))}
+      </div>
+    </div>
+  );
+  return (
+    <div className="how-visual how-visual-panel">
+      {[
+        ['Peatland restoration', 'Pending verification', 'amber'],
+        ['Native woodland creation', 'Validated — PIUs', 'blue'],
+        ['Peatland units', 'Verified — sellable', 'green'],
+      ].map(([title, status, tone]) => (
+        <div key={title} className="how-mock-listing">
+          <div>
+            <strong>{title}</strong>
+            <span>Pre-screened · evidence-backed · Scotland</span>
+          </div>
+          <span className={`badge badge-${tone}`}>{status}</span>
+        </div>
+      ))}
+      <div className="how-mock-buyer">
+        <Building2 size={14} /> PIUs aren't sellable credits until independently verified
+      </div>
     </div>
   );
 }
 
-// ── The Problem ───────────────────────────────────────────────────────────────
+// ── Decorative animated valley band (ink line-art, gazette style) ──────────────
+function LandscapeBand() {
+  const trees = [
+    [165, 151], [232, 157], [292, 151],
+    [812, 139], [862, 133], [908, 141], [955, 134],
+    [1048, 150],
+  ];
+  return (
+    <div className="hp-landscape" aria-hidden="true">
+      <svg viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+        {/* drifting birds */}
+        <g stroke="var(--ink)" strokeWidth="1.4" fill="none" strokeLinecap="round">
+          <g className="lb-bird" style={{ '--by': '36px', animationDelay: '0s' }}>
+            <path d="M0 0 Q5 -4 10 0 Q15 -4 20 0" />
+          </g>
+          <g className="lb-bird" style={{ '--by': '54px', animationDelay: '6s' }}>
+            <path d="M0 0 Q4 -3 8 0 Q12 -3 16 0" />
+          </g>
+          <g className="lb-bird" style={{ '--by': '26px', animationDelay: '12s' }}>
+            <path d="M0 0 Q5 -4 10 0 Q15 -4 20 0" />
+          </g>
+        </g>
+
+        {/* layered hills */}
+        <path d="M0 120 C120 100 240 108 360 112 C520 118 680 96 840 108 C980 118 1100 104 1200 110 L1200 200 L0 200 Z" fill="var(--ink)" opacity="0.06" />
+        <path d="M0 150 C160 132 300 146 460 148 C640 150 780 134 960 146 C1080 154 1140 146 1200 150 L1200 200 L0 200 Z" fill="var(--ink)" opacity="0.10" />
+
+        {/* winding river */}
+        <path d="M556 116 C548 148 604 168 590 200 L648 200 C636 170 612 150 612 116 Z" fill="#3f8a86" opacity="0.28" />
+        <path className="lb-river" d="M584 118 C576 150 626 170 614 198" stroke="#eafff7" strokeWidth="2" fill="none" strokeLinecap="round" strokeDasharray="6 12" opacity="0.6" />
+
+        {/* foreground hill (river runs behind it) */}
+        <path d="M0 178 C200 166 360 182 560 180 C760 178 900 186 1080 180 C1140 178 1170 180 1200 180 L1200 200 L0 200 Z" fill="var(--ink)" opacity="0.16" />
+
+        {/* swaying conifers */}
+        {trees.map(([x, y], i) => (
+          <g key={i} className="lb-tree" style={{ animationDelay: `${(i % 4) * 0.7}s` }}>
+            <rect x={x - 1.5} y={y - 7} width="3" height="9" fill="var(--ink)" opacity="0.5" />
+            <path d={`M${x} ${y - 34} L${x + 11} ${y - 14} L${x - 11} ${y - 14} Z`} fill="var(--ink)" opacity="0.5" />
+            <path d={`M${x} ${y - 24} L${x + 13} ${y - 4} L${x - 13} ${y - 4} Z`} fill="var(--ink)" opacity="0.5" />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+function HowItWorks({ goTo }) {
+  const steps = [
+    {
+      n: '1', icon: Map, title: 'Draw your boundary', tag: 'Free', tagCls: 'free',
+      body: 'Open the map and click around your land. The moment you close the boundary, we pull live Sentinel-2 satellite imagery and SoilGrids soil data for that exact parcel — the same open data the European Space Agency and ISRIC World Soil Information publish.',
+      points: [
+        'Works for fields, moorland and woodland',
+        'Sentinel-2 imagery at 10 m resolution, 5-day revisit',
+        'No paperwork and no site visit — takes about 30 seconds',
+      ],
+    },
+    {
+      n: '2', icon: ShieldCheck, title: 'Get your assessment', tag: 'Free', tagCls: 'free',
+      body: 'We apply the eligibility rules of the Woodland Carbon Code and Peatland Code to your land data. Every check shows a clear pass or fail with the specific rule it applies, so you see exactly why your land qualifies — or what is holding it back.',
+      points: [
+        'A go / investigate / no-go decision with a per-rule breakdown',
+        'Value range in pounds with confidence — never a fake-precise single number',
+        'Every check cites the scheme rule it applies',
+      ],
+    },
+    {
+      n: '3', icon: FileText, title: 'Download your evidence pack', tag: 'Paid', tagCls: 'paid',
+      body: 'A professional evidence pack with your boundary map, satellite indices, soil baseline and value range — structured exactly as an approved verifier or land agent needs to start their review.',
+      points: [
+        'Boundary map with coordinates',
+        'Raw Sentinel-2 indices and soil baseline',
+        'Routing to approved Peatland Code and WCC verifiers',
+      ],
+    },
+    {
+      n: '4', icon: Handshake, title: 'Sell to verified buyers', tag: 'Commission', tagCls: 'commission',
+      body: 'Once your project passes independent verification, it lists on our curated UK marketplace. Corporate buyers see the full verification chain — which is why UK carbon credits command around four times the global average price.',
+      points: [
+        'UK-only curated marketplace with verification proof',
+        'Buyers receive retirement evidence for their ESG reports',
+        'We earn commission only when you sell — no upfront fees',
+      ],
+    },
+  ];
+
+  return (
+    <section className="hp-section hp-alt" id="how">
+      <div className="hp-section-inner">
+        <div className="hp-section-head">
+          <p className="hp-label">How it works</p>
+          <h2>What you get at each step</h2>
+          <p className="hp-section-sub">
+            From drawing your boundary to a buyer-ready project — with exact data sources
+            and a clear breakdown of what's free and what's paid.
+          </p>
+        </div>
+
+        <div className="how-stack">
+          {steps.map(({ n, icon: Icon, title, tag, tagCls, body, points }, i) => (
+            <div key={n} className={`how-row ${i % 2 === 1 ? 'flip' : ''}`}>
+              <div className="how-row-text">
+                <div className="how-row-meta">
+                  <span className="how-row-n">Step {n}</span>
+                  <span className={`how-step-tag ${tagCls}`}>{tag}</span>
+                </div>
+                <h3><Icon size={20} /> {title}</h3>
+                <p>{body}</p>
+                <ul className="how-detail-points">
+                  {points.map(pt => (
+                    <li key={pt}><CheckCircle size={14} />{pt}</li>
+                  ))}
+                </ul>
+              </div>
+              <StepVisual step={i} />
+            </div>
+          ))}
+        </div>
+
+        <div className="how-cta">
+          <button className="btn btn-primary btn-lg" onClick={() => goTo('signup')}>
+            Start with the free check <ArrowRight size={15} />
+          </button>
+        </div>
+
+        <LandscapeBand />
+      </div>
+    </section>
+  );
+}
+
+// ── The problem — with sourced stats ──────────────────────────────────────────
 function Problem() {
   return (
     <section className="hp-section" id="problem">
       <div className="hp-section-inner">
         <div className="hp-section-head">
-          <p className="hp-label">The access problem</p>
-          <h2>Carbon markets are locked.<br />We open them.</h2>
-          <p className="hp-body" style={{ maxWidth: 600, margin: '0 auto' }}>
-            The route from raw land to a saleable credit is long, fragmented and expensive.
-            Fixed validation costs make small projects sub-scale — not because the land isn't suitable,
-            but because the economics don't work without infrastructure to bundle and automate them.
+          <p className="hp-label">Why this matters</p>
+          <h2>Why most land never earns carbon income</h2>
+          <p className="hp-section-sub">
+            Finding out used to cost £10,000+ and take 3–5 years. Your first answer
+            here takes 60 seconds and costs nothing.
           </p>
         </div>
 
-        <div className="prob-grid">
+        <div className="prob-stats">
           {[
-            {
-              icon: Lock,
-              title: 'High market-entry costs',
-              body: 'WCC validation alone costs thousands of pounds per project — well above the break-even point for parcels under ~20 ha. Most small landowners never start.',
-              stat: '£10,000+', statLabel: 'WCC validation cost',
-            },
-            {
-              icon: AlertTriangle,
-              title: 'Trust and integrity crisis',
-              body: '94% of rainforest credits examined by The Guardian / Die Zeit investigation delivered no real climate benefit. Buyers now demand verifiable, domestic supply.',
-              stat: '94%', statLabel: 'of rainforest credits = phantom',
-            },
-            {
-              icon: FileText,
-              title: 'Information asymmetry',
-              body: "Landowners don't know if their land qualifies, which standard applies, what documentation is needed, or which verifier to approach. We solve this with one scan.",
-              stat: '9 steps', statLabel: 'from land to verified credit',
-            },
-          ].map(({ icon: Icon, title, body, stat, statLabel }) => (
-            <div key={title} className="prob-card">
-              <div className="prob-card-icon"><Icon size={18} /></div>
-              <div className="prob-card-stat">{stat}<small>{statLabel}</small></div>
-              <h3>{title}</h3>
-              <p>{body}</p>
+            ['£10,000+', 'typical cost of an initial feasibility study', 'Land carbon consultants, 2023'],
+            ['3–5 years', 'the traditional route from first idea to first sale', 'WCC Project Developer Guide'],
+            ['£26.85/t', 'UK WCC average Pending Issuance Unit price (2024)', 'WCC Annual Report 2024'],
+            ['80%', 'of UK carbon-eligible land is in Scotland', 'IUCN UK / Peatland Code'],
+          ].map(([num, label, source]) => (
+            <div key={num} className="prob-stat">
+              <strong>{num}</strong>
+              <span>{label}</span>
+              <small className="prob-stat-source">{source}</small>
             </div>
           ))}
+        </div>
+
+        <div className="prob-compare">
+          <div className="prob-compare-col without">
+            <div className="prob-compare-head">The old way</div>
+            {[
+              'Commission a land agent or consultant',
+              'Ecological baseline survey (site visit)',
+              'Write a Project Design Document',
+              'Find an accredited verifier yourself',
+              'Desk review and site validation visit',
+              'Respond to validation queries',
+              'Register on UK Land Carbon Registry',
+              'Find corporate buyers yourself',
+            ].map((s, i) => (
+              <div key={i} className="prob-compare-row">
+                <span className="prob-step-num">{i + 1}</span>
+                <span>{s}</span>
+              </div>
+            ))}
+            <div className="prob-compare-footer bad">Typically 3–5 years · £10,000+ before your first sale</div>
+          </div>
+          <div className="prob-compare-vs">vs</div>
+          <div className="prob-compare-col with">
+            <div className="prob-compare-head">With CarbonOS</div>
+            {[
+              ['Draw your boundary on the satellite map', '30 sec'],
+              ['Sentinel-2 + SoilGrids check runs automatically', '45 sec'],
+              ['Eligibility score and value range arrive', '60 sec'],
+              ['Download your full evidence report', 'same day'],
+              ['Evidence pack structured to scheme rule IDs', '1 week'],
+              ['Introduced to approved verifiers', 'guided'],
+              ['Project tracked to UK LCR registration', 'guided'],
+              ['Matched with vetted corporate buyers', 'when verified'],
+            ].map(([s, t], i) => (
+              <div key={i} className="prob-compare-row">
+                <CheckCircle size={13} />
+                <span>{s}</span>
+                <span className="prob-time">{t}</span>
+              </div>
+            ))}
+            <div className="prob-compare-footer good">First answer in under 60 seconds · Free</div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-// ── How It Works ──────────────────────────────────────────────────────────────
-function HowItWorks({ goTo }) {
+// ── Who it's for ──────────────────────────────────────────────────────────────
+function Audiences({ goTo }) {
   return (
-    <section className="hp-section hp-alt" id="how">
+    <section className="hp-section hp-alt" id="who">
       <div className="hp-section-inner">
         <div className="hp-section-head">
-          <p className="hp-label">How CarbonOS works</p>
-          <h2>From raw land to carbon income — four steps.</h2>
-          <p className="hp-body" style={{ maxWidth: 560, margin: '0 auto' }}>
-            Each step is independently valuable. You don't have to commit to the full journey to benefit.
+          <p className="hp-label">Who it's for</p>
+          <h2>Who CarbonOS is for</h2>
+          <p className="hp-section-sub">
+            Landowners assess and sell. Companies buy high-integrity UK credits they
+            can stand behind. Verifiers receive structured evidence instead of blank project files.
           </p>
         </div>
 
-        <div className="hp-steps-v2">
-          {[
-            {
-              n: '01', icon: Map,
-              title: 'Draw your boundary',
-              body: 'Use our interactive map to outline your land parcel. We instantly pull real Sentinel-2 satellite data (10m resolution), soil carbon readings and land cover classification — no site visit needed.',
-              tag: 'Free',
-            },
-            {
-              n: '02', icon: ShieldCheck,
-              title: 'Receive your assessment',
-              body: 'Our rules engine checks your land against WCC and Peatland Code criteria. You get an eligibility classification (go / investigate / no-go), indicative carbon value range and confidence band — never a single false-precision figure.',
-              tag: 'Free',
-            },
-            {
-              n: '03', icon: FileText,
-              title: 'Build your evidence pack',
-              body: 'We generate a structured evidence pack and route you to approved VVBs, ecologists and labs. Every step is tracked. Platform estimates are screening outputs only — independent validation remains mandatory.',
-              tag: 'Paid',
-            },
-            {
-              n: '04', icon: Handshake,
-              title: 'Connect with buyers',
-              body: 'Once independently validated, your project appears in our curated marketplace with clear trust labels. Buyers receive serialised retirement and reporting evidence. OHMC acts as trusted mediator — never as a credit issuer.',
-              tag: 'Commission',
-            },
-          ].map(({ n, icon: Icon, title, body, tag }) => (
-            <div key={n} className="hp-step-v2">
-              <div className="hp-step-header">
-                <div className="hp-step-num-badge">{n}</div>
-                <span className="hp-step-tag">{tag}</span>
-                <div className="hp-step-icon"><Icon size={18} /></div>
-              </div>
-              <div className="hp-step-body">
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </div>
+        <div className="aud-featured">
+          <div className="aud-featured-body">
+            <div className="aud-card-head">
+              <span className="aud-icon"><Leaf size={17} /></span>
+              <h3>Landowners &amp; farmers</h3>
             </div>
-          ))}
+            <p>
+              Whether you own peatland in Sutherland or a woodland in Perthshire, find out
+              in minutes whether you qualify for the Woodland Carbon Code or Peatland Code,
+              and what you could realistically earn — before spending a penny on consultants.
+            </p>
+            <button className="btn btn-primary" onClick={() => goTo('signup')}>
+              Check my land — free <ArrowRight size={14} />
+            </button>
+          </div>
+          <ul className="aud-featured-list">
+            {[
+              'Free live satellite check of your exact drawn boundary',
+              'Assessment against both UK voluntary carbon schemes',
+              'Honest value range with low/mid/high projections — not a sales pitch',
+              'Professional PDF report structured for verifier review',
+              'One tracker from first scan to first verified sale',
+            ].map(f => (
+              <li key={f}><CheckCircle size={14} />{f}</li>
+            ))}
+          </ul>
         </div>
 
-        <div className="hp-center-action">
-          <button className="hp-btn-primary" onClick={() => goTo('signup')}>
-            Start your free scan <ArrowRight size={16} />
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── Three User Journeys ───────────────────────────────────────────────────────
-function UserJourneys({ goTo }) {
-  return (
-    <section className="hp-section" id="landowners">
-      <div className="hp-section-inner">
-        <div className="hp-section-head">
-          <p className="hp-label">Three user journeys, one platform</p>
-          <h2>OHMC is the trusted mediator between all sides of the market.</h2>
-        </div>
-
-        <div className="journey-grid">
-          {/* Landowner */}
-          <div className="journey-card landowner">
-            <div className="journey-card-header">
-              <div className="journey-icon"><Leaf size={20} /></div>
-              <div>
-                <span className="journey-tag">For Landowners &amp; Farmers</span>
-                <h3>Discover what your land is worth to the carbon market.</h3>
-              </div>
+        <div className="aud-grid">
+          <div className="aud-card">
+            <div className="aud-card-head">
+              <span className="aud-icon"><Building2 size={16} /></span>
+              <h3>Corporate buyers</h3>
             </div>
-            <p>Whether you own peatland in Sutherland or a woodland in Perthshire, OHMC tells you in minutes whether you qualify, which standard fits, and what you could realistically earn — at no upfront cost.</p>
-            <ul className="journey-list">
+            <p>
+              Buy high-integrity UK carbon credits with clear guidance on exactly what
+              you can and cannot claim — with proof of every credit retired on the
+              UK Land Carbon Registry in your name.
+            </p>
+            <ul>
               {[
-                'Free eligibility scan with real Sentinel-2 satellite data',
-                'WCC and Peatland Code assessment with confidence bands',
-                'Indicative carbon value range — not a guaranteed price',
-                'Auto-generated evidence pack and approved VVB routing',
-                'Project tracker from scan to first sale',
-              ].map(f => <li key={f}><CheckCircle size={13} />{f}</li>)}
+                'Curated UK-only project listings',
+                'Clear VCMI claim-level guidance on every project',
+                'Full retirement certificate from UK LCR',
+              ].map(f => (
+                <li key={f}><CheckCircle size={13} />{f}</li>
+              ))}
             </ul>
-            <button className="journey-btn primary" onClick={() => goTo('signup')}>
-              Check my land <ArrowRight size={14} />
+            <button className="btn btn-secondary" onClick={() => goTo('app', 'marketplace')}>
+              Browse the marketplace <ArrowRight size={13} />
             </button>
           </div>
 
-          {/* Buyer */}
-          <div className="journey-card buyer">
-            <div className="journey-card-header">
-              <div className="journey-icon buyer"><BarChart3 size={20} /></div>
-              <div>
-                <span className="journey-tag buyer">For Corporate Buyers &amp; ESG Teams</span>
-                <h3>Source high-integrity UK carbon supply you can stand behind.</h3>
-              </div>
+          <div className="aud-card">
+            <div className="aud-card-head">
+              <span className="aud-icon"><Users size={16} /></span>
+              <h3>Verifiers &amp; partners</h3>
             </div>
-            <p>Post-2021, undifferentiated credits are a reputational liability. OHMC curates pre-screened domestic projects with clear trust labels, retirement evidence and claim guidance aligned to Science Based Targets.</p>
-            <ul className="journey-list">
+            <p>
+              Receive a pipeline of pre-screened projects with Sentinel-2 satellite data,
+              SoilGrids baselines and evidence mapped to specific scheme rule IDs — no
+              blank project files, no cold starts.
+            </p>
+            <ul>
               {[
-                'Curated UK domestic project listings (WCC + Peatland Code)',
-                'Trust labels: exactly what you can and cannot claim',
-                'Due diligence pack on request',
-                'Serialised retirement and scope 3 claim evidence',
-                'UK units at £26.85/t avg — 4× global voluntary average',
-              ].map(f => <li key={f}><CheckCircle size={13} />{f}</li>)}
-            </ul>
-            <button className="journey-btn" onClick={() => goTo('app', 'marketplace')}>
-              Browse marketplace <ArrowRight size={14} />
-            </button>
-          </div>
-
-          {/* Partner VVB */}
-          <div className="journey-card partner">
-            <div className="journey-card-header">
-              <div className="journey-icon partner"><Users size={20} /></div>
-              <div>
-                <span className="journey-tag partner">For VVBs, Ecologists &amp; Labs</span>
-                <h3>Receive a pipeline of pre-screened projects ready for validation.</h3>
-              </div>
-            </div>
-            <p>CarbonOS pre-screens projects and generates structured evidence packs before they reach your desk — cutting your review time and improving submission quality from day one.</p>
-            <ul className="journey-list">
-              {[
-                'Pre-screened project pipeline with satellite data and maps',
-                'Structured evidence pack per project — no cold starts',
-                'Collaboration portal with tracked non-conformances',
-                'Standards-bound: WCC v2.1 and Peatland Code v1.1',
+                'Pre-screened projects with satellite + soil evidence attached',
+                'Evidence indexed to WCC and Peatland Code rule references',
                 'Referral fee on successful project onboarding',
-              ].map(f => <li key={f}><CheckCircle size={13} />{f}</li>)}
+              ].map(f => (
+                <li key={f}><CheckCircle size={13} />{f}</li>
+              ))}
             </ul>
-            <button className="journey-btn" onClick={() => goTo('signup')}>
-              Join as partner <ArrowRight size={14} />
+            <button className="btn btn-secondary" onClick={() => goTo('app', 'partner')}>
+              Join as a partner <ArrowRight size={13} />
             </button>
           </div>
         </div>
@@ -330,171 +604,61 @@ function UserJourneys({ goTo }) {
 // ── Standards ─────────────────────────────────────────────────────────────────
 function Standards() {
   return (
-    <section className="hp-section hp-alt">
+    <section className="hp-section" id="standards">
       <div className="hp-section-inner">
         <div className="hp-section-head">
           <p className="hp-label">Integrity by design</p>
-          <h2>Built on UK recognised standards.<br />Never a black box.</h2>
-          <p className="hp-body" style={{ maxWidth: 600, margin: '0 auto' }}>
-            CarbonOS uses a deterministic, standards-bound rules engine — not AI — to
-            quantify anything credit-relevant. Machine learning estimates, prioritises and flags.
-            Independent VVBs validate and verify. Always.
+          <h2>Checked against the UK's official schemes</h2>
+          <p className="hp-section-sub">
+            Every assessment applies the Woodland Carbon Code and Peatland Code rules exactly.
+            Independent verifiers always have the final word — we never certify our own results.
           </p>
         </div>
 
         <div className="std-grid">
-          <div className="std-card">
-            <div className="std-badge wcc">WCC</div>
-            <h4>Woodland Carbon Code</h4>
-            <p>Governs woodland-creation projects. Validation confirms expected sequestration claims; verification converts PIUs into tradable WCUs on the UK Land Carbon Registry.</p>
-            <div className="std-detail">
-              <span>PIUs → WCUs on verification</span>
-              <span>Validated by approved VVBs</span>
+          {[
+            {
+              badge: 'WCC', color: 'green',
+              title: 'Woodland Carbon Code',
+              body: 'The UK government-backed standard for woodland creation. Our eligibility checks apply its rules on land eligibility, additionality and carbon estimation — all confirmed by an independent verifier.',
+              details: ['Government-backed standard · Forestry Commission', 'Independent validation required for PIU issuance'],
+            },
+            {
+              badge: 'PC', color: 'amber',
+              title: 'Peatland Code',
+              body: 'The IUCN UK Peatland Programme standard for peatland restoration. Our checks apply its rules on peat presence, degraded condition and restoration additionality.',
+              details: ['Most UK peatland is degraded (IUCN UK)', 'Restoring it earns independently verified carbon income'],
+            },
+            {
+              badge: 'UK LCR', color: 'blue',
+              title: 'UK Land Carbon Registry',
+              body: 'The public register where every UK Pending Issuance Unit and Verified Carbon Unit is recorded. Until a credit is independently verified and registered, it cannot be sold as an offset.',
+              details: ['Public, searchable register at uklcr.com', 'PIUs ≠ sellable credits until verified'],
+            },
+            {
+              badge: 'ESA', color: 'violet',
+              title: 'ESA Sentinel-2 (Copernicus)',
+              body: 'Your boundary is checked with real Sentinel-2 MSI imagery at 10-metre resolution, refreshed every 5 days. We compute NDVI (vegetation), NDWI (water/peat), NBR (burn ratio) and EVI indices.',
+              details: ['10 m resolution, 5-day revisit · Open Copernicus data', 'Paired with SoilGrids v2 soil chemistry (ISRIC)'],
+            },
+          ].map(({ badge, color, title, body, details }) => (
+            <div key={title} className={`std-card ${color}`}>
+              <div className={`std-badge ${color}`}>{badge}</div>
+              <h4>{title}</h4>
+              <p>{body}</p>
+              <div className="std-details">
+                {details.map(d => <span key={d}><CheckCircle size={12} />{d}</span>)}
+              </div>
             </div>
-          </div>
-          <div className="std-card">
-            <div className="std-badge peat">PC</div>
-            <h4>Peatland Code</h4>
-            <p>Governs peatland restoration (IUCN UK). All projects must be independently validated and verified by OF&G, Soil Association or other approved bodies. Scotland holds ~80% of UK eligible peatland.</p>
-            <div className="std-detail">
-              <span>1.4M ha degraded in Scotland</span>
-              <span>250,000 ha target by 2030</span>
-            </div>
-          </div>
-          <div className="std-card">
-            <div className="std-badge reg">UKLCR</div>
-            <h4>UK Land Carbon Registry</h4>
-            <p>PIUs represent potential future sequestration only. They cannot be used, retired, reported or listed on an exchange. This PIU/verified credit distinction is the most important compliance fact on the platform.</p>
-            <div className="std-detail">
-              <span>PIUs ≠ verified credits</span>
-              <span>Registry-linked audit trail</span>
-            </div>
-          </div>
-          <div className="std-card">
-            <div className="std-badge data">S2</div>
-            <h4>Sentinel-2 MRV Data</h4>
-            <p>Real Sentinel-2 L2A imagery at 10m resolution processed live over your boundary. NDVI, NDWI, soil moisture — authoritative open data from ESA Copernicus, not estimates from a database.</p>
-            <div className="std-detail">
-              <span>10m resolution, 5-day revisit</span>
-              <span>ESA / Copernicus open data</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="std-disclaimer">
           <AlertTriangle size={14} />
-          Platform estimates are preliminary screening outputs and do not constitute certified carbon credits, investment advice or guaranteed revenue.
-          Official credit issuance requires independent validation and verification by an accredited VVB under the relevant UK standard.
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── Market Opportunity ────────────────────────────────────────────────────────
-function MarketOpportunity() {
-  return (
-    <section className="hp-section">
-      <div className="hp-section-inner">
-        <div className="hp-section-head">
-          <p className="hp-label">The market gap we target</p>
-          <h2>Capital has gone to buyers.<br />Not to the landowners who hold the supply.</h2>
-        </div>
-        <div className="opp-grid">
-          <div className="opp-left">
-            <p className="hp-body">
-              The global voluntary carbon market was valued at <strong>$1.4 billion in 2024</strong>, projected
-              to reach $7–35 billion by 2030. UK code-linked units trade at <strong>£26.85/t</strong> — four times
-              the global voluntary average of $6.37.
-            </p>
-            <p className="hp-body">
-              Yet the capital has concentrated in buyer-facing ratings and analytics firms — not in
-              landowner-facing origination. BeZero Carbon and Sylvera have each raised &gt;$100M.
-              The integrated, trusted, jargon-free mediator for fragmented small landowners is
-              structurally under-built.
-            </p>
-            <p className="hp-body">
-              <strong>That is the gap CarbonOS targets.</strong>
-            </p>
-            <div className="opp-stats">
-              {[
-                ['$1.4bn', 'Global VCM 2024'],
-                ['$35bn+', 'Projected 2030 high'],
-                ['£617M', 'Scottish WCC pipeline'],
-                ['78%', 'Gross margin on paid report'],
-              ].map(([v, l]) => (
-                <div key={l} className="opp-stat">
-                  <strong>{v}</strong><span>{l}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="opp-right">
-            <div className="opp-revenue-card">
-              <p className="hp-label" style={{ marginBottom: 16 }}>Revenue model</p>
-              {[
-                ['Free scan',                 'Landowner',        'Free — lead generation'],
-                ['Eligibility report',         'Landowner/estate', '£99 – £499'],
-                ['Project onboarding package', 'Developer',        '£1,500 – £7,500'],
-                ['Partner referral fee',       'VVB / lab',        '5–15%'],
-                ['Success fee',                'Landowner',        '3–10% of sale'],
-                ['Marketplace commission',     'Buyer / seller',   '2–8% of transaction'],
-                ['Monitoring subscription',    'Landowner / buyer','£20–£250 / month'],
-                ['ESG portfolio dashboard',    'Corporate buyer',  '£500–£5,000 / year'],
-              ].map(([stream, customer, price]) => (
-                <div key={stream} className="opp-rev-row">
-                  <div>
-                    <strong>{stream}</strong>
-                    <span>{customer}</span>
-                  </div>
-                  <span className="opp-rev-price">{price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── Roadmap ───────────────────────────────────────────────────────────────────
-function Roadmap() {
-  const phases = [
-    { phase: 'Phase 1', time: '0–3 mo',  title: 'Eligibility Scanner',   status: 'live',   items: ['Boundary drawing', 'Satellite screening', 'WCC + Peatland rules', 'Carbon estimate'] },
-    { phase: 'Phase 2', time: '3–6 mo',  title: 'Paid Reports + Partners', status: 'next',  items: ['Paid eligibility report', 'Evidence pack generator', 'VVB partner routing', 'Document vault'] },
-    { phase: 'Phase 3', time: '6–12 mo', title: 'Certification Workflow', status: 'future', items: ['MRV workbench', 'VVB collaboration portal', 'Registry connector (UKLCR)', 'Verification tracking'] },
-    { phase: 'Phase 4', time: '12–24 mo',title: 'Buyer Marketplace',      status: 'future', items: ['Curated project listings', 'Buyer due diligence packs', 'Retirement evidence', 'ESG dashboard'] },
-    { phase: 'Phase 5', time: '24+ mo',  title: 'Consumer Wallet',        status: 'gated',  items: ['Gated by policy + regulation', 'Verified supply must exist first', 'Infrastructure → wallet', 'Never the reverse'] },
-  ];
-
-  return (
-    <section className="hp-section hp-alt">
-      <div className="hp-section-inner">
-        <div className="hp-section-head">
-          <p className="hp-label">Product roadmap</p>
-          <h2>Infrastructure first. Wallet last.</h2>
-          <p className="hp-body" style={{ maxWidth: 560, margin: '0 auto' }}>
-            OHMC begins with eligibility and MRV — the parts the market has never built for small landowners.
-            The consumer carbon wallet arrives only after verified supply, buyer trust and policy clarity exist.
-          </p>
-        </div>
-        <div className="roadmap-grid">
-          {phases.map(({ phase, time, title, status, items }) => (
-            <div key={phase} className={`roadmap-card ${status}`}>
-              <div className="roadmap-card-head">
-                <span className="roadmap-phase">{phase}</span>
-                <span className="roadmap-time">{time}</span>
-                <span className={`roadmap-status ${status}`}>
-                  {status === 'live' ? 'Live now' : status === 'next' ? 'Next' : status === 'gated' ? 'Policy-gated' : 'Planned'}
-                </span>
-              </div>
-              <h4>{title}</h4>
-              <ul>
-                {items.map(i => <li key={i}><span />{i}</li>)}
-              </ul>
-            </div>
-          ))}
+          Platform outputs are preliminary eligibility screening results, not certified carbon credits
+          or guaranteed income. Credits can only be issued after independent validation and
+          verification by an accredited body under the relevant UK voluntary carbon standard.
+          Pending Issuance Units (PIUs) cannot be sold, retired, reported or listed until verified.
         </div>
       </div>
     </section>
@@ -504,44 +668,70 @@ function Roadmap() {
 // ── CTA ───────────────────────────────────────────────────────────────────────
 function CTA({ goTo }) {
   return (
-    <section className="hp-cta-section">
-      <div className="hp-section-inner hp-cta-inner">
-        <p className="hp-label">Get started — free</p>
-        <h2>Ready to find out if your land qualifies?</h2>
-        <p>Draw a boundary. Get a real satellite-backed assessment. No commitment. No cost. No jargon.</p>
-        <div className="hp-cta-actions">
-          <button className="hp-btn-primary" onClick={() => goTo('signup')}>
-            Start free scan <ArrowRight size={16} />
-          </button>
-          <button className="hp-btn-outline-dark" onClick={() => goTo('login')}>
-            Sign in to your account
-          </button>
+    <section className="hp-cta">
+      <div className="hp-cta-inner">
+        <div className="hp-cta-left">
+          <p className="hp-label light">Get started — free</p>
+          <h2>Find out what your land is worth.</h2>
+          <p>
+            Draw a boundary. Get a real Sentinel-2 satellite-backed eligibility answer
+            in under a minute. No commitment, no cost, no jargon.
+          </p>
+          <div className="hp-cta-actions">
+            <button className="btn btn-light btn-lg" onClick={() => goTo('signup')}>
+              Check my land — free <ArrowRight size={15} />
+            </button>
+            <button className="btn btn-outline-light btn-lg" onClick={() => goTo('login')}>
+              Sign in
+            </button>
+          </div>
         </div>
-        <p className="hp-cta-disclaimer">
-          Platform estimates are preliminary only and do not constitute verified carbon credits, investment advice or guaranteed revenue.
-          CarbonOS acts as a trusted mediator only — it does not issue, certify or underwrite carbon credits.
-        </p>
+        <div className="hp-cta-card">
+          <strong>What the scan delivers</strong>
+          <div className="hp-cta-checklist">
+            {[
+              'Live Sentinel-2 vegetation &amp; moisture indices',
+              'SoilGrids soil organic carbon, bulk density &amp; pH',
+              'Rule-by-rule WCC + Peatland Code eligibility check',
+              'Value range: low / mid / high projection with assumptions',
+              'Downloadable PDF evidence report (paid)',
+              'Introductions to approved verifiers (when eligible)',
+            ].map(item => (
+              <div key={item} className="hp-cta-check-row">
+                <CheckCircle size={13} />
+                <span dangerouslySetInnerHTML={{ __html: item }} />
+              </div>
+            ))}
+          </div>
+          <div className="hp-cta-disclaimer">
+            <AlertTriangle size={11} />
+            Preliminary screening only. Credits require independent verification.
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
 // ── Footer ────────────────────────────────────────────────────────────────────
-function Footer({ goTo }) {
+function Footer() {
   const cols = [
-    { title: 'Platform',   links: ['How It Works', 'Eligibility Scanner', 'Evidence Pack', 'Marketplace', 'Partner Portal'] },
-    { title: 'Standards',  links: ['Woodland Carbon Code', 'Peatland Code', 'UK Land Carbon Registry', 'ICVCM Principles'] },
-    { title: 'Resources',  links: ['Research Paper', 'Carbon Standards Guide', 'MRV Workflow', 'Help Centre'] },
-    { title: 'Company',    links: ['About OHMC', 'Careers', 'Press', 'Contact', 'Privacy Policy'] },
+    { title: 'Platform', links: ['How it works', 'Eligibility scanner', 'Evidence report', 'Marketplace', 'Partner programme'] },
+    { title: 'Standards', links: ['Woodland Carbon Code', 'Peatland Code', 'UK Land Carbon Registry', 'VCMI principles'] },
+    { title: 'Data sources', links: ['ESA Sentinel-2', 'SoilGrids (ISRIC)', 'OS National Grid', 'WCC Carbon tables'] },
+    { title: 'Company', links: ['About OHMC', 'Careers', 'Press', 'Contact', 'Privacy policy'] },
   ];
   return (
     <footer className="hp-footer">
       <div className="hp-footer-top">
         <div className="hp-footer-brand">
-          <img src={logoImg} alt="OHMC" className="hp-footer-logo" />
-          <p>Trusted first-mile infrastructure for UK land-based carbon markets. Connecting landowners, verifiers and buyers with integrity.</p>
+          <div className="hp-footer-logo">
+            <img src={logoImg} alt="OHMC" />
+            <span>CarbonOS</span>
+          </div>
+          <p>Helping UK landowners access the voluntary carbon market honestly, against official standards.</p>
           <div className="hp-footer-badges">
-            {['WCC', 'Peatland Code', 'IUCN UK', 'MRV Enabled'].map(b => <span key={b}>{b}</span>)}
+            {['Woodland Carbon Code', 'Peatland Code', 'UK LCR', 'ESA Copernicus'].map(b => <span key={b}>{b}</span>)}
           </div>
         </div>
         {cols.map(({ title, links }) => (
@@ -552,8 +742,18 @@ function Footer({ goTo }) {
         ))}
       </div>
       <div className="hp-footer-legal">
-        <p>© OHMC 2026. All rights reserved. Registered in Scotland.</p>
-        <p>Platform estimates are preliminary screening outputs only and do not constitute certified carbon credits, investment advice, legal advice or guaranteed revenue. Official credit issuance requires independent validation and verification by an accredited VVB under the relevant UK voluntary carbon standard. OHMC acts solely as a trusted mediator and does not issue, certify or underwrite carbon credits. PIUs (Pending Issuance Units) cannot be used, retired, reported or listed on an exchange under UK Land Carbon Registry rules.</p>
+        <p>© OHMC {new Date().getFullYear()}. All rights reserved. Registered in Scotland.</p>
+        <p>
+          All platform outputs are preliminary eligibility screening results only and do not constitute
+          certified carbon credits, investment advice, legal advice or guaranteed revenue. Official
+          credit issuance requires independent validation and verification by an accredited verification
+          body under the relevant UK voluntary carbon standard (Woodland Carbon Code v2.2 or Peatland
+          Code v4.0). OHMC acts solely as a technology platform and trusted mediator; it does not issue,
+          certify or underwrite carbon credits. Pending Issuance Units (PIUs) cannot be used, retired,
+          reported or listed on an exchange under UK Land Carbon Registry rules until independently
+          verified. Carbon price data is sourced from publicly available scheme reports and is for
+          indicative purposes only.
+        </p>
       </div>
     </footer>
   );
@@ -565,16 +765,13 @@ export default function HomePage({ goTo }) {
     <div className="hp-root">
       <PublicNav goTo={goTo} />
       <Hero goTo={goTo} />
-      <MarketStats />
-      <LandGallery />
-      <Problem />
+      <ExplainerStrip />
       <HowItWorks goTo={goTo} />
-      <UserJourneys goTo={goTo} />
+      <Problem />
+      <Audiences goTo={goTo} />
       <Standards />
-      <MarketOpportunity />
-      <Roadmap />
       <CTA goTo={goTo} />
-      <Footer goTo={goTo} />
+      <Footer />
     </div>
   );
 }

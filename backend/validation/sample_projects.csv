@@ -1,0 +1,3 @@
+project,pathway,area_ha,condition,species,productivity,crediting_years,actual_net_tco2e
+EXAMPLE_REPLACE_WITH_REAL_VERIFIED_PROJECT,peatland,40,drained,,,30,4500
+EXAMPLE_REPLACE_WITH_REAL_VERIFIED_PROJECT,wcc,50,,broadleaf,medium,35,4500

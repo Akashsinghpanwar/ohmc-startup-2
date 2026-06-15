@@ -34,6 +34,21 @@ def _centroid(geometry: dict) -> tuple[float, float]:
     return sum(ys) / len(ys), sum(xs) / len(xs)
 
 
+def _peat_proxy(soc):
+    """
+    Topsoil SOC is only a PROXY for organic soil. It CANNOT establish peat
+    DEPTH (≥ 0.5 m), which is what the Peatland Code actually requires.
+    Returns (peat_status, is_peat, is_peaty, requires_depth_survey).
+    """
+    if soc is None:
+        return "unknown", False, False, True
+    if soc >= 200:
+        return "deep_peat_likely", True, False, True
+    if soc >= 40:
+        return "organic_peaty", False, True, True
+    return "mineral", False, False, False
+
+
 async def get_soil_data(geometry: dict) -> dict:
     """
     Fetch soil properties for the parcel centroid.
@@ -79,6 +94,9 @@ async def _try_soilgrids(lat: float, lon: float) -> dict | None:
                 "ph": None,
                 "is_peat": False,
                 "is_peaty": False,
+                "peat_status": "unknown",
+                "requires_peat_depth_survey": True,
+                "peat_note": "SOC is a topsoil proxy — peat depth (≥0.5m) must be confirmed by survey.",
                 "centroid_lat": lat,
                 "centroid_lon": lon,
                 "data_source": "SoilGrids v2.0 (ISRIC)",
@@ -99,8 +117,11 @@ async def _try_soilgrids(lat: float, lon: float) -> dict | None:
                 if name == "oc":
                     soc = mean_val / 10.0          # dg/kg → g/kg
                     result["organic_carbon_g_per_kg"] = round(soc, 1)
-                    result["is_peat"]  = soc >= 200
-                    result["is_peaty"] = 40 <= soc < 200
+                    status, is_peat, is_peaty, survey = _peat_proxy(soc)
+                    result["is_peat"] = is_peat
+                    result["is_peaty"] = is_peaty
+                    result["peat_status"] = status
+                    result["requires_peat_depth_survey"] = survey
                 elif name == "bdod":
                     result["bulk_density_kg_per_m3"] = round(mean_val * 10, 0)
                 elif name == "phh2o":
@@ -133,7 +154,8 @@ def _uk_regional_model(lat: float, lon: float) -> dict:
     Returns estimates flagged as modelled, not measured.
     """
     zone = _classify_uk_zone(lat, lon)
-    soc, bdod, ph, is_peat, is_peaty = _zone_properties(zone)
+    soc, bdod, ph, _is_peat, _is_peaty = _zone_properties(zone)
+    status, is_peat, is_peaty, survey = _peat_proxy(soc)
 
     return {
         "organic_carbon_g_per_kg": soc,
@@ -141,6 +163,9 @@ def _uk_regional_model(lat: float, lon: float) -> dict:
         "ph": ph,
         "is_peat": is_peat,
         "is_peaty": is_peaty,
+        "peat_status": status,
+        "requires_peat_depth_survey": survey,
+        "peat_note": "SOC is a topsoil proxy — peat depth (≥0.5m) must be confirmed by survey.",
         "centroid_lat": lat,
         "centroid_lon": lon,
         "soil_zone": zone,

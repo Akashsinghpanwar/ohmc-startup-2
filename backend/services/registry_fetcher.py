@@ -4,11 +4,56 @@ Fetches real carbon credit projects from public registries:
   - Gold Standard (second largest voluntary registry)
 Falls back to local DB if APIs are unavailable.
 """
+import os
 import logging
 import httpx
 from typing import List, Dict, Any
 
 logger = logging.getLogger(__name__)
+
+# UK Land Carbon Registry spatial endpoint for double-counting / overlap checks.
+# Not publicly available as a spatial API today, so this is a wired hook.
+UK_LCR_OVERLAP_URL = os.getenv("UK_LCR_OVERLAP_URL")
+
+
+async def check_parcel_overlap(geometry: dict) -> dict:
+    """
+    Integrity check: does this parcel overlap an existing registered project
+    (double-counting / uniqueness)? SCAFFOLD — returns an honest status.
+
+    * If `UK_LCR_OVERLAP_URL` is configured, POST the geometry and report the
+      registry's overlap result.
+    * Otherwise return {"checked": False, "status": "not_connected", ...} so the
+      result clearly flags that a manual registry check is still required.
+    We never assert "no overlap" without actually checking.
+    """
+    if not UK_LCR_OVERLAP_URL:
+        return {
+            "checked": False,
+            "status": "not_connected",
+            "note": "UK Land Carbon Registry overlap check not connected "
+                    "(set UK_LCR_OVERLAP_URL). Manual double-counting check required.",
+        }
+    try:
+        async with httpx.AsyncClient(timeout=12, headers=HEADERS) as client:
+            resp = await client.post(UK_LCR_OVERLAP_URL, json={"geometry": geometry})
+            resp.raise_for_status()
+            data = resp.json()
+        overlaps = data.get("overlaps", data.get("overlap", False))
+        return {
+            "checked": True,
+            "status": "overlap_found" if overlaps else "clear",
+            "matches": data.get("matches", []),
+            "note": "Checked against UK Land Carbon Registry project footprints.",
+        }
+    except Exception as e:
+        logger.warning(f"Registry overlap check failed: {type(e).__name__}: {e}")
+        return {
+            "checked": False,
+            "status": "check_failed",
+            "note": f"Registry overlap check failed ({type(e).__name__}). "
+                    "Manual double-counting check required.",
+        }
 
 VERRA_URL = "https://registry.verra.org/uiapi/resource/resourceSummary"
 GS_URL    = "https://registry.goldstandard.org/projects"

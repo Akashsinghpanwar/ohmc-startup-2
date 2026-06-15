@@ -221,10 +221,44 @@ def get_eligibility_score(
         score = _rule_based_score(wcc_score, peat_score, area_ha, soil)
         source = "rules"
 
-    confidence = "high" if score > 70 else ("medium" if score > 45 else "low")
+    confidence, factors = _assess_confidence(score, sentinel, soil, area_ha)
 
     return {
         "eligibility_score": score,
         "confidence_level": confidence,
+        "confidence_factors": factors,
         "score_source": source,
     }
+
+
+def _assess_confidence(score: int, sentinel: dict, soil: dict, area_ha: float) -> tuple[str, list[str]]:
+    """
+    Confidence reflects DATA QUALITY, not just the score. A high score from a
+    cloudy scene + a regional-fallback soil estimate is not 'high confidence'.
+    Returns (level, factors) where level ∈ {"high","medium","low"}.
+    """
+    levels = ["low", "medium", "high"]
+    idx = 2 if score > 70 else (1 if score > 45 else 0)
+    factors: list[str] = []
+
+    # Satellite quality
+    if sentinel.get("error") or sentinel.get("ndvi") is None:
+        idx = 0
+        factors.append("no usable satellite scene for this parcel")
+    else:
+        cc = sentinel.get("cloud_cover")
+        if cc is not None and cc > 60:
+            idx = max(0, idx - 1)
+            factors.append(f"high cloud cover on best scene ({cc:.0f}%)")
+
+    # Soil source — regional model is coarse vs a real SoilGrids hit
+    src = (soil.get("data_source") or "")
+    if "egional" in src or soil.get("soil_zone"):
+        idx = max(0, idx - 1)
+        factors.append("soil estimated from regional model (SoilGrids unavailable)")
+
+    # Sub-minimum parcels are inherently uncertain for screening
+    if area_ha < 1.0:
+        factors.append("parcel below scheme minimum area")
+
+    return levels[idx], factors

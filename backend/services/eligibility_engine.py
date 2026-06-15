@@ -282,6 +282,67 @@ def recommend_pathway(wcc_score: float, peat_score: float, soil: dict) -> Carbon
     return CarbonPathway.NONE
 
 
+def apply_hard_gates(
+    area_ha: float,
+    soil: dict,
+    land_cover: dict,
+    pathway: CarbonPathway,
+    score: int,
+) -> tuple[CarbonPathway, int, str, list[str]]:
+    """
+    Enforce non-negotiable scheme disqualifiers BEFORE a result is shown.
+
+    A parcel that fails a scheme's hard requirements (e.g. below the minimum
+    area) must not be presented as 'moderately eligible' for it. This is the
+    gate that stops a 0.18 ha parcel reading as "62/100 — Woodland Carbon Code".
+
+    Returns (pathway, score, band, reasons) where
+    band ∈ {"eligible", "investigate", "not_eligible"}.
+    """
+    wf = land_cover.get("woodland_fraction", 0) or 0
+    is_peat = soil.get("is_peat", False)
+    is_peaty = soil.get("is_peaty", False)
+
+    wcc_block: list[str] = []
+    if area_ha < 1.0:
+        wcc_block.append("Below Woodland Carbon Code minimum area (1 ha)")
+    if wf >= 0.7:
+        wcc_block.append("Already closed-canopy woodland — no additionality")
+    if is_peat:
+        wcc_block.append("Deep peat — Peatland Code applies, not WCC")
+
+    peat_block: list[str] = []
+    if area_ha < 2.0:
+        peat_block.append("Below Peatland Code minimum area (2 ha)")
+    if not (is_peat or is_peaty):
+        peat_block.append("No organic / peaty soil detected")
+
+    wcc_ok = not wcc_block
+    peat_ok = not peat_block
+
+    # Never recommend a scheme the parcel is disqualified from.
+    if pathway == CarbonPathway.WCC and not wcc_ok:
+        pathway = CarbonPathway.PEATLAND if peat_ok else CarbonPathway.NONE
+    elif pathway == CarbonPathway.PEATLAND and not peat_ok:
+        pathway = CarbonPathway.WCC if wcc_ok else CarbonPathway.NONE
+    elif pathway == CarbonPathway.NONE:
+        pathway = CarbonPathway.WCC if wcc_ok else (CarbonPathway.PEATLAND if peat_ok else CarbonPathway.NONE)
+
+    if pathway == CarbonPathway.NONE:
+        reasons = list(dict.fromkeys(wcc_block + peat_block))  # dedupe, keep order
+        return pathway, min(score, 20), "not_eligible", reasons
+
+    # Eligible for at least one scheme → band derived from the screening score.
+    if score >= 65:
+        band = "eligible"
+    elif score >= 40:
+        band = "investigate"
+    else:
+        band = "not_eligible"
+        score = min(score, 35)
+    return pathway, score, band, []
+
+
 def peatland_condition_from_indices(sentinel: dict) -> str:
     """Classify peatland condition from spectral indices."""
     ndwi = sentinel.get("ndwi", 0)

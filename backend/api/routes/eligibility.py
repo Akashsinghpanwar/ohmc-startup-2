@@ -17,11 +17,13 @@ from services.sentinel import get_satellite_indices
 from services.soil import get_soil_data
 from services.eligibility_engine import (
     run_wcc_rules, run_peatland_rules, classify_land_cover,
-    recommend_pathway, peatland_condition_from_indices,
+    recommend_pathway, peatland_condition_from_indices, apply_hard_gates,
 )
 from services.carbon_calculator import estimate_carbon, compute_area_ha, CarbonInputs
 from services.ml.eligibility_scorer import get_eligibility_score
 from services.ml.peatland_model import classify_peatland_condition
+from services.land_cover_ukceh import get_ukceh_land_cover
+from services.registry_fetcher import check_parcel_overlap
 from db import execute, fetchrow, fetch
 
 router = APIRouter()
@@ -42,28 +44,42 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
     if area_ha > 50_000:
         raise HTTPException(400, "Area too large (> 50,000 ha)")
 
-    # ── Satellite + Soil in parallel ─────────────────────────────────────────
-    sentinel_raw, soil_raw = await asyncio.gather(
+    # ── Satellite + Soil + UKCEH land cover + registry overlap (parallel) ──────
+    sentinel_raw, soil_raw, ukceh_lc, overlap = await asyncio.gather(
         get_satellite_indices(geometry),
         get_soil_data(geometry),
+        get_ukceh_land_cover(geometry),
+        check_parcel_overlap(geometry),
     )
 
-    # ── Land cover classification ─────────────────────────────────────────────
+    # ── Land cover: prefer UKCEH LCM, fall back to Sentinel-2 spectral ──────────
     land_cover = classify_land_cover(sentinel_raw)
+    if ukceh_lc.get("configured"):
+        land_cover["dominant_class"] = ukceh_lc["dominant_class"]
+        land_cover["data_source"] = ukceh_lc["data_source"]
+        land_cover["source_status"] = "ukceh_lcm"
+    else:
+        land_cover["source_status"] = "spectral_fallback"
+        land_cover["source_note"] = ukceh_lc.get("note")
 
     # ── Rules engines ─────────────────────────────────────────────────────────
     wcc_rules, wcc_score   = run_wcc_rules(area_ha, sentinel_raw, soil_raw, land_cover)
     peat_rules, peat_score = run_peatland_rules(area_ha, sentinel_raw, soil_raw, land_cover)
 
-    # ── Pathway ───────────────────────────────────────────────────────────────
+    # ── Pathway (provisional) ─────────────────────────────────────────────────
     pathway = recommend_pathway(wcc_score, peat_score, soil_raw)
 
     # ── ML scoring ────────────────────────────────────────────────────────────
-    ml_elig   = get_eligibility_score(area_ha, sentinel_raw, soil_raw, wcc_score, peat_score)
+    ml_elig = get_eligibility_score(area_ha, sentinel_raw, soil_raw, wcc_score, peat_score)
+
+    # ── Hard gates: enforce disqualifiers, settle final pathway/score/band ──────
+    pathway, score, band, gate_reasons = apply_hard_gates(
+        area_ha, soil_raw, land_cover, pathway, ml_elig["eligibility_score"]
+    )
+
+    # ── Carbon estimate (uses the gated pathway) ───────────────────────────────
     peat_cond = classify_peatland_condition(sentinel_raw) if pathway == CarbonPathway.PEATLAND else {}
     peat_condition = peat_cond.get("condition", peatland_condition_from_indices(sentinel_raw))
-
-    # ── Carbon estimate ───────────────────────────────────────────────────────
     carbon_inputs = CarbonInputs(
         eligible_area_ha=area_ha,
         pathway=pathway,
@@ -91,17 +107,38 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
 
     ms = round((time.time() - t0) * 1000)
 
-    next_steps = _next_steps(pathway, ml_elig["eligibility_score"])
+    next_steps = _next_steps(pathway, score)
 
     wcc_rules_dict   = [r.dict() for r in wcc_rules]
     peat_rules_dict  = [r.dict() for r in peat_rules]
 
+    # ── Integrity checks (transparent status — not fabricated results) ─────────
+    anomaly_flags = []
+    if overlap.get("status") != "clear":
+        anomaly_flags.append(f"Registry double-counting check: {overlap.get('status', 'unknown')}")
+    if soil_raw.get("requires_peat_depth_survey") and pathway == CarbonPathway.PEATLAND:
+        anomaly_flags.append("Peat depth survey required to confirm Peatland Code eligibility")
+
+    integrity_checks = {
+        "double_counting": overlap,
+        "peat_depth": {
+            "required": soil_raw.get("requires_peat_depth_survey", True),
+            "status": soil_raw.get("peat_status", "unknown"),
+            "note": soil_raw.get("peat_note"),
+        },
+        "land_cover_source": land_cover.get("source_status"),
+        "validation": "Independent VVB validation/verification required before any registry action.",
+    }
+
     ml_scores = {
-        "eligibility_score": ml_elig["eligibility_score"],
+        "eligibility_score": score,
+        "eligibility_band": band,
+        "gate_reasons": gate_reasons,
         "peatland_condition": peat_cond.get("condition"),
         "woodland_suitability": round(wcc_score, 2) if pathway == CarbonPathway.WCC else None,
         "confidence_level": ml_elig["confidence_level"],
-        "anomaly_flags": [],
+        "confidence_factors": ml_elig.get("confidence_factors", []),
+        "anomaly_flags": anomaly_flags,
     }
 
     # ── Save scan to PostgreSQL ───────────────────────────────────────────────
@@ -123,7 +160,7 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
         user_id,
         req.land_name or "Unnamed Parcel",
         area_ha, round(lat, 6), round(lon, 6),
-        ml_elig["eligibility_score"],
+        score,
         ml_elig["confidence_level"],
         pathway.value,
         json.dumps(sentinel_raw),
@@ -149,7 +186,9 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
         "boundary_coordinates": boundary_coordinates,
         "geometry": geometry,
         "recommended_pathway": pathway.value,
-        "eligibility_score": ml_elig["eligibility_score"],
+        "eligibility_score": score,
+        "eligibility_band": band,
+        "gate_reasons": gate_reasons,
         "confidence": ml_elig["confidence_level"],
         "sentinel_indices": {**sentinel_raw},
         "soil_data": {**soil_raw},
@@ -158,6 +197,7 @@ async def scan_boundary(req: BoundaryScanRequest, authorization: str = Header(No
         "peatland_rules": peat_rules_dict,
         "carbon_estimate": carbon_est if pathway != CarbonPathway.NONE else None,
         "ml_scores": ml_scores,
+        "integrity_checks": integrity_checks,
         "next_steps": next_steps,
         "processing_time_ms": ms,
     }

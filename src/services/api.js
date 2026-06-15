@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE = 'http://127.0.0.1:8000';
+const BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
 
 const client = axios.create({ baseURL: BASE, timeout: 60000 });
 
@@ -48,6 +48,12 @@ export const googleLoginUrl = (role = 'landowner') =>
 // ── Eligibility ────────────────────────────────────────────────────────────
 export const scanBoundary = (geometry, landName = 'My Parcel') =>
   client.post('/api/eligibility/scan', { geometry, land_name: landName }).then(r => r.data);
+
+export const scanHistory = (limit = 20) =>
+  client.get('/api/eligibility/history', { params: { limit } }).then(r => r.data);
+
+export const getScan = (scanId) =>
+  client.get(`/api/eligibility/scan/${scanId}`).then(r => r.data);
 
 // ── Parcels ────────────────────────────────────────────────────────────────
 export const createParcel = (data) =>

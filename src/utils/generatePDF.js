@@ -2,8 +2,13 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 // ── Colours ────────────────────────────────────────────────────────────────────
-const GREEN  = [22, 163, 74];   // #16a34a
-const DGREEN = [20, 83, 45];    // #14532d
+// Brand chrome = teal/forest; GREEN is reserved for status (pass, high score).
+const GREEN   = [22, 163, 74];   // #16a34a — status only
+const TEAL    = [15, 118, 110];  // #0f766e — brand accent
+const FOREST  = [6, 78, 59];     // #064e3b — header/footer bands
+const TEAL200 = [153, 246, 228]; // #99f6e4 — text on forest bands
+const TEAL50  = [240, 253, 250]; // #f0fdfa — highlight boxes
+const DGREEN  = FOREST;          // legacy alias
 const NAVY   = [15, 23, 42];    // #0f172a
 const SLATE  = [100, 116, 139]; // #64748b
 const WHITE  = [255, 255, 255];
@@ -98,7 +103,7 @@ function addFooter(doc, pageNum, totalPages, refId) {
 function sectionHead(doc, y, title) {
   const W = doc.internal.pageSize.getWidth();
   filled(doc, 10, y, W - 20, 7, LGRAY);
-  doc.setDrawColor(...GREEN);
+  doc.setDrawColor(...TEAL);
   doc.setLineWidth(0.6);
   doc.line(10, y, 10, y + 7);
   setFont(doc, 9, 'bold', NAVY);
@@ -159,18 +164,18 @@ export async function generateEligibilityPDF(scanResult) {
   // Company name beside logo
   setFont(doc, 18, 'bold', WHITE);
   doc.text('OHMC CarbonOS', M + 33, 20);
-  setFont(doc, 9, 'normal', [187, 247, 208]);
+  setFont(doc, 9, 'normal', TEAL200);
   doc.text('Carbon Eligibility & Opportunity Report', M + 33, 28);
-  setFont(doc, 7.5, 'normal', [187, 247, 208]);
+  setFont(doc, 7.5, 'normal', TEAL200);
   doc.text('Voluntary Carbon Market · UK & Scotland', M + 33, 35);
 
   // Ref + date — top right
-  setFont(doc, 7, 'normal', [187, 247, 208]);
+  setFont(doc, 7, 'normal', TEAL200);
   doc.text(refId, W - M - doc.getStringUnitWidth(refId) * 7 / doc.internal.scaleFactor, 14);
   doc.text(genDate, W - M - doc.getStringUnitWidth(genDate) * 7 / doc.internal.scaleFactor, 21);
 
-  // Decorative green stripe
-  filled(doc, 0, 52, W, 3, GREEN);
+  // Decorative brand stripe
+  filled(doc, 0, 52, W, 3, TEAL);
 
   // Parcel info block
   let y = 68;
@@ -241,12 +246,12 @@ export async function generateEligibilityPDF(scanResult) {
 
   // Carbon estimate headline
   if (ce) {
-    filled(doc, M, y, CW, 30, [240, 253, 244]);
-    doc.setDrawColor(...GREEN);
+    filled(doc, M, y, CW, 30, TEAL50);
+    doc.setDrawColor(...TEAL);
     doc.setLineWidth(0.4);
     doc.rect(M, y, CW, 30, 'S');
 
-    setFont(doc, 8, 'bold', GREEN);
+    setFont(doc, 8, 'bold', TEAL);
     doc.text('INDICATIVE CARBON VALUE (PRELIMINARY — NOT VERIFIED)', M + 4, y + 6);
     setFont(doc, 20, 'bold', NAVY);
     doc.text(`${ce.net_units_tco2e?.toLocaleString() || 'N/A'} tCO₂e`, M + 4, y + 18);
@@ -292,7 +297,7 @@ export async function generateEligibilityPDF(scanResult) {
   }
   setFont(doc, 8, 'bold', WHITE);
   doc.text('OHMC CarbonOS  ·  Eligibility Report', M + 14, 8);
-  setFont(doc, 7, 'normal', [187, 247, 208]);
+  setFont(doc, 7, 'normal', TEAL200);
   doc.text(refId, W - M - 40, 8);
 
   // Boundary coordinates table (show max 20 pts)
@@ -399,7 +404,7 @@ export async function generateEligibilityPDF(scanResult) {
   }
   setFont(doc, 8, 'bold', WHITE);
   doc.text('OHMC CarbonOS  ·  Eligibility Report', M + 14, 8);
-  setFont(doc, 7, 'normal', [187, 247, 208]);
+  setFont(doc, 7, 'normal', TEAL200);
   doc.text(refId, W - M - 40, 8);
 
   y = sectionHead(doc, y, 'WOODLAND CARBON CODE (WCC) — Eligibility Rules');
@@ -515,7 +520,7 @@ export async function generateEligibilityPDF(scanResult) {
   }
   setFont(doc, 8, 'bold', WHITE);
   doc.text('OHMC CarbonOS  ·  Eligibility Report', M + 14, 8);
-  setFont(doc, 7, 'normal', [187, 247, 208]);
+  setFont(doc, 7, 'normal', TEAL200);
   doc.text(refId, W - M - 40, 8);
 
   if (ce) {
@@ -562,7 +567,7 @@ export async function generateEligibilityPDF(scanResult) {
       },
       didParseCell(data) {
         if (data.row.index === 1 && data.section === 'body') {
-          data.cell.styles.fillColor = [240, 253, 244];
+          data.cell.styles.fillColor = TEAL50;
           data.cell.styles.textColor = DGREEN;
         }
       },
@@ -594,16 +599,16 @@ export async function generateEligibilityPDF(scanResult) {
   }
 
   // Contact box
-  filled(doc, M, y, CW, 32, [240, 253, 244]);
-  doc.setDrawColor(...GREEN);
+  filled(doc, M, y, CW, 32, TEAL50);
+  doc.setDrawColor(...TEAL);
   doc.setLineWidth(0.5);
   doc.rect(M, y, CW, 32, 'S');
-  setFont(doc, 9, 'bold', DGREEN);
+  setFont(doc, 9, 'bold', FOREST);
   doc.text('Next Step — Contact OHMC', M + 6, y + 8);
   setFont(doc, 8, 'normal', NAVY);
   doc.text('OHMC acts as your trusted mediator throughout the credit origination process.', M + 6, y + 15);
   doc.text('We connect you with accredited VVBs, buyers, and technical partners.', M + 6, y + 21);
-  setFont(doc, 8, 'bold', GREEN);
+  setFont(doc, 8, 'bold', TEAL);
   doc.text('hello@ohmc.co.uk  ·  www.ohmc.co.uk', M + 6, y + 28);
   y += 38;
 

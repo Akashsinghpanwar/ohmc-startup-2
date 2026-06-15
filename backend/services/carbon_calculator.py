@@ -11,22 +11,45 @@ from typing import Optional
 from models.schemas import CarbonPathway
 
 
-# WCC sequestration rates by yield class (tCO2e/ha/yr)
-# Derived from Woodland Carbon Code yield model tables
-WCC_RATE_TABLE = {
-    "high":     3.8,   # Productive woodland, YC 14+
-    "medium":   2.4,   # Mixed/native woodland, YC 8-14
-    "low":      1.4,   # Poor conditions, YC < 8
-    "default":  2.0,   # Conservative default
+# ── Woodland Carbon Code: sequestration rate lookup ────────────────────────────
+# Representative NET sequestration averaged over the crediting period
+# (tCO2e/ha/yr), keyed by (species group, productivity/yield band).
+# These are representative mid-range values in the order of magnitude of the
+# WCC Carbon Calculator (CARBINE-derived) lookups — NOT the calculator output
+# itself. The verified figure comes from the WCC Calculator for the specific
+# species, yield class, spacing, management and region, confirmed at validation.
+WCC_RATES = {
+    ("conifer",   "high"):   10.0,   # e.g. Sitka spruce, YC ~20+
+    ("conifer",   "medium"):  7.0,   # productive conifer, YC ~12-16
+    ("conifer",   "low"):     4.5,   # conifer on poorer ground, YC ~8
+    ("broadleaf", "high"):    5.0,   # productive broadleaf / mixed
+    ("broadleaf", "medium"):  3.5,   # native broadleaf, YC ~6
+    ("broadleaf", "low"):     2.2,   # native woodland / scrub, YC ~4
 }
+WCC_RATE_DEFAULT = 3.5  # conservative native-broadleaf assumption when unknown
 
-# Peatland code emission factor reduction (tCO2e/ha/yr)
-# Based on Peatland Code guidance: typical avoided emission from rewetting
-PEATLAND_EF_REDUCTION = {
-    "degraded":   3.0,  # Heavily drained, active peat extraction
-    "modified":   2.0,  # Improved grassland on peat
-    "near_natural": 0.8, # Slightly modified blanket bog
-    "default":    2.5,
+# Woodland net-credit adjustments (Eq. 2: net = (S − B − L − E)(1 − r)).
+# Fractions of gross sequestration, conservative for afforestation of open land.
+WOODLAND_BASELINE_FRAC   = 0.00   # bare/open land baseline ~ negligible
+WOODLAND_LEAKAGE_FRAC    = 0.05   # market/activity-shifting leakage
+WOODLAND_ESTABLISH_FRAC  = 0.03   # site prep / establishment emissions
+
+# ── Peatland Code: avoided-emission factors by condition ────────────────────────
+# Representative avoided emissions on restoration (tCO2e/ha/yr), by condition
+# category. Conservative mid-range values aligned to the Peatland Code field
+# protocol categories; the verified figure uses the project's surveyed condition.
+PEATLAND_EF = {
+    "actively_eroding": 6.0,   # hagg / gully / bare eroding peat
+    "drained":          5.0,   # drained grassland / cropland on peat
+    "degraded":         4.0,   # generic degraded (drained + erosion mix)
+    "modified":         2.5,   # modified bog / rough grazing
+    "near_natural":     0.5,   # near-natural — low additionality
+    "default":          3.0,
+}
+# Back-compat: map any legacy condition strings onto the table above.
+PEATLAND_CONDITION_ALIASES = {
+    "degraded": "degraded", "modified": "modified",
+    "near_natural": "near_natural", "default": "default",
 }
 
 # Standard crediting horizons
@@ -48,9 +71,9 @@ PRICES = {
     "high": 38.0,
 }
 
-# Transaction/platform costs (fraction)
+# Transaction/platform cost (fraction). The permanence buffer is applied
+# separately via net_units (q_risk) and must NOT be subtracted again here.
 F_TRANSACTION = 0.08   # 8% blended platform + broker cost
-F_BUFFER = 0.20        # built into buffer above
 
 
 @dataclass
@@ -58,7 +81,8 @@ class CarbonInputs:
     eligible_area_ha: float
     pathway: CarbonPathway
     peatland_condition: str = "default"
-    woodland_productivity: str = "default"
+    woodland_productivity: str = "medium"
+    woodland_species: str = "broadleaf"   # "broadleaf" | "conifer"
     is_scotland: bool = True
     crediting_override: Optional[int] = None
 
@@ -76,38 +100,46 @@ def estimate_carbon(inputs: CarbonInputs) -> dict:
     area = inputs.eligible_area_ha
     crediting_years = inputs.crediting_override or CREDITING_YEARS[pathway]
     buffer = BUFFER_FACTORS[pathway]
+    q_risk = 1 - buffer  # permanence/risk buffer
 
-    # Select annual rate
+    assumptions = {}
+
     if pathway == CarbonPathway.WCC:
-        annual_rate = WCC_RATE_TABLE.get(
-            inputs.woodland_productivity, WCC_RATE_TABLE["default"]
-        )
-        # Scotland uplift: better native woodland stocks
-        if inputs.is_scotland:
-            annual_rate *= 1.05
+        # Rate from species × yield band (no Scotland uplift — that was unfounded).
+        species = inputs.woodland_species if inputs.woodland_species in ("conifer", "broadleaf") else "broadleaf"
+        prod = inputs.woodland_productivity if inputs.woodland_productivity in ("high", "medium", "low") else "medium"
+        annual_rate = WCC_RATES.get((species, prod), WCC_RATE_DEFAULT)
+
+        gross_units = area * annual_rate * crediting_years
+        # Eq. 2: net = (S − B − L − E)(1 − r)
+        deductible = WOODLAND_BASELINE_FRAC + WOODLAND_LEAKAGE_FRAC + WOODLAND_ESTABLISH_FRAC
+        net_units = gross_units * (1 - deductible) * q_risk
+        assumptions = {
+            "species_group": species,
+            "yield_band": prod,
+            "baseline_fraction": WOODLAND_BASELINE_FRAC,
+            "leakage_fraction": WOODLAND_LEAKAGE_FRAC,
+            "establishment_fraction": WOODLAND_ESTABLISH_FRAC,
+            "note": "Species/yield not surveyed — assumed native broadleaf, medium yield. "
+                    "Verified rate comes from the WCC Carbon Calculator at validation.",
+        }
     else:
-        annual_rate = PEATLAND_EF_REDUCTION.get(
-            inputs.peatland_condition, PEATLAND_EF_REDUCTION["default"]
-        )
+        cond = PEATLAND_CONDITION_ALIASES.get(inputs.peatland_condition, inputs.peatland_condition)
+        annual_rate = PEATLAND_EF.get(cond, PEATLAND_EF["default"])
+        gross_units = area * annual_rate * crediting_years
+        net_units = gross_units * q_risk
+        assumptions = {
+            "condition_category": cond,
+            "note": "Avoided-emission factor is representative for the inferred condition. "
+                    "Verified factor uses the surveyed peatland condition at validation.",
+        }
 
-    # Gross units over crediting period (Eq. 1 from paper, simplified)
-    # C_gross = A × R_type × T × Q_condition × Q_risk
-    q_condition = _condition_factor(pathway, inputs.peatland_condition, inputs.woodland_productivity)
-    q_risk = 1 - buffer
-
-    gross_units = area * annual_rate * crediting_years * q_condition
-    net_units = gross_units * q_risk
-
-    # Revenue estimates (Eq. 3 from paper)
-    # V = C_eligible × P_unit × (1 − F_transaction − F_buffer)
-    net_factor = 1 - F_TRANSACTION - buffer
-
+    # Revenue (Eq. 3): net_units already has the buffer removed, so apply only
+    # the transaction/platform cost here — never subtract the buffer twice.
+    net_factor = 1 - F_TRANSACTION
     low_value  = net_units * PRICES["low"]  * net_factor
     mid_value  = net_units * PRICES["mid"]  * net_factor
     high_value = net_units * PRICES["high"] * net_factor
-
-    # Uncertainty band: ±25% for pre-screening
-    confidence_band = "±25%"
 
     return {
         "pathway": pathway.value,
@@ -123,25 +155,14 @@ def estimate_carbon(inputs: CarbonInputs) -> dict:
         "price_low": PRICES["low"],
         "price_mid": PRICES["mid"],
         "price_high": PRICES["high"],
-        "confidence_band": confidence_band,
+        "confidence_band": "±25%",
+        "assumptions": assumptions,
         "disclaimer": (
             "Preliminary screening estimate only — not a verified credit or "
             "guarantee of revenue. Final quantities follow applicable code "
             "methodology and must be validated/verified by an accredited VVB."
         ),
     }
-
-
-def _condition_factor(pathway: CarbonPathway, peat_condition: str, woodland_prod: str) -> float:
-    """Quality/condition adjustment factor Q_condition."""
-    if pathway == CarbonPathway.PEATLAND:
-        return {"degraded": 1.0, "modified": 0.75, "near_natural": 0.4, "default": 0.85}.get(
-            peat_condition, 0.85
-        )
-    else:
-        return {"high": 1.0, "medium": 0.85, "low": 0.65, "default": 0.8}.get(
-            woodland_prod, 0.8
-        )
 
 
 def compute_area_ha(geometry: dict) -> float:
